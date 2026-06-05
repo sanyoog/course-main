@@ -1,0 +1,2766 @@
+{
+  "meta": {
+    "title": "Zero to AI Architect",
+    "subtitle": "Complete Free Roadmap: Math → Python → ML → Deep Learning → Custom Architectures",
+    "description": "A curated, structured collection of free resources for building AI models from scratch — now expanded with LLM engineering, efficient AI, MLOps, and additional university-grade textbooks. Math-first, architecture-deep, entirely free.",
+    "targetAudience": "A Course for ai research path",
+    "lastUpdated": "2025–2026",
+    "totalResources": 190
+  },  
+  "roadmap": {
+    "phases": [
+      {
+        "id": "phase-1",
+        "phase": 1,
+        "title": "Mathematical Foundations",
+        "subtitle": "The language of AI",
+        "estimatedWeeks": "10–14",
+        "color": "#6366f1",
+        "icon": "∑",
+        "description": "Re-learn math from first principles with university-level rigor. Every topic maps directly to a concept in ML/DL."
+      },
+      {
+        "id": "phase-2",
+        "phase": 2,
+        "title": "Python for ML/AI",
+        "subtitle": "Tools of the trade",
+        "estimatedWeeks": "3–4",
+        "color": "#f59e0b",
+        "icon": "🐍",
+        "description": "Scientific Python stack — NumPy, Pandas, Matplotlib, and the mindset of vectorized thinking."
+      },
+      {
+        "id": "phase-3",
+        "phase": 3,
+        "title": "Classical Machine Learning",
+        "subtitle": "Learn before you deep-learn",
+        "estimatedWeeks": "6–8",
+        "color": "#10b981",
+        "icon": "⚙️",
+        "description": "Regression, classification, kernels, trees, ensembles — understand every algorithm mathematically and implement from scratch."
+      },
+      {
+        "id": "phase-4",
+        "phase": 4,
+        "title": "Deep Learning Fundamentals",
+        "subtitle": "Backprop to transformers",
+        "estimatedWeeks": "8–10",
+        "color": "#ef4444",
+        "icon": "🧠",
+        "description": "Build neural networks from scratch. Understand gradient flow, optimization, regularization, and modern architectures."
+      },
+      {
+        "id": "phase-5",
+        "phase": 5,
+        "title": "Advanced Architectures",
+        "subtitle": "Build what doesn't exist yet",
+        "estimatedWeeks": "12+",
+        "color": "#8b5cf6",
+        "icon": "🏗️",
+        "description": "Transformers, diffusion models, GNNs, SSMs, MoE — study, implement, and experiment with cutting-edge architectures."
+      }
+    ]
+  },
+  "mathematics": {
+    "sectionTitle": "Mathematics — Start From Zero",
+    "sectionSubtitle": "University-grade, foreign-lecture-first. JEE gave you the instincts — these courses give you the proofs.",
+    "importance": "critical",
+    "topics": [
+      {
+        "id": "math-linalg",
+        "title": "Linear Algebra",
+        "whyItMatters": "Neural networks ARE matrix multiplications. Embeddings, attention, weight tensors — all linear algebra.",
+        "mlConnections": [
+          "Weight matrices in neural networks",
+          "SVD in dimensionality reduction (PCA)",
+          "Eigenvalues in optimization",
+          "Dot product in attention mechanism",
+          "Matrix decompositions in transformers"
+        ],
+        "priority": 1,
+        "phaseId": "phase-1",
+        "icon": "▦",
+        "color": "#6366f1",
+        "subtopics": [
+          "Vectors and vector spaces",
+          "Matrix operations, transpose, inverse",
+          "Systems of linear equations",
+          "Determinants",
+          "Eigenvalues and eigenvectors",
+          "SVD — Singular Value Decomposition",
+          "PCA — Principal Component Analysis",
+          "Inner products and orthogonality",
+          "Change of basis",
+          "Norms (L1, L2, Frobenius)"
+        ],
+        "resources": [
+          {
+            "id": "linalg-mit-1806",
+            "name": "Linear Algebra — MIT 18.06",
+            "instructor": "Prof. Gilbert Strang",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full University Course",
+            "format": "Video Lectures + Problem Sets + Exams",
+            "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+            "isFree": true,
+            "rating": 5,
+            "description": "The gold standard. Strang's geometric intuition for linear algebra is unmatched. 34 lectures. Includes full problem sets and exams.",
+            "tags": [
+              "MIT",
+              "classic",
+              "must-watch",
+              "geometry-first"
+            ]
+          },
+          {
+            "id": "linalg-3b1b",
+            "name": "Essence of Linear Algebra",
+            "instructor": "Grant Sanderson (3Blue1Brown)",
+            "university": "Independent",
+            "platform": "YouTube",
+            "type": "Visual Intuition Series",
+            "format": "Animated Videos (15 episodes)",
+            "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+            "isFree": true,
+            "rating": 5,
+            "description": "Watch BEFORE MIT 18.06. Visual animations build intuition for every concept. Geometric thinking that transforms understanding.",
+            "tags": [
+              "visual",
+              "intuition",
+              "animations",
+              "starter"
+            ]
+          },
+          {
+            "id": "linalg-mit-1806sc",
+            "name": "Linear Algebra — MIT 18.06SC (Scholar Edition)",
+            "instructor": "Prof. Gilbert Strang + Recitation Instructors",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full Course with Recitations",
+            "format": "Video + Recitation + Problem Sets",
+            "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Enhanced edition with recitation videos that clarify difficult problems.",
+            "tags": [
+              "MIT",
+              "recitations",
+              "problems"
+            ]
+          },
+          {
+            "id": "linalg-icl",
+            "name": "Mathematics for Machine Learning: Linear Algebra",
+            "instructor": "Prof. David Dye + Samuel Cooper",
+            "university": "Imperial College London",
+            "platform": "Coursera (Audit Free)",
+            "type": "ML-focused Linear Algebra",
+            "format": "Video + Quizzes + Jupyter Notebooks",
+            "url": "https://www.coursera.org/learn/linear-algebra-machine-learning",
+            "isFree": true,
+            "auditNote": "Audit for free — all video content available without payment",
+            "rating": 4,
+            "description": "Bridges linear algebra directly to ML. Covers PCA with hands-on notebooks. Practical, ML-first perspective.",
+            "tags": [
+              "ML-focused",
+              "Imperial",
+              "practical",
+              "PCA"
+            ]
+          },
+          {
+            "id": "linalg-vmls",
+            "name": "Introduction to Applied Linear Algebra — VMLS",
+            "instructor": "Prof. Stephen Boyd & Lieven Vandenberghe",
+            "university": "Stanford",
+            "platform": "Stanford / Free PDF",
+            "type": "Free Textbook",
+            "format": "PDF + Companion Jupyter Notebooks",
+            "url": "https://web.stanford.edu/~boyd/vmls/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Practical, ML-focused linear algebra. Short, readable, and comes with Python companion notebooks. Perfect bridge between theory and implementation.",
+            "tags": [
+              "Stanford",
+              "Boyd",
+              "free-book",
+              "practical",
+              "Python-notebooks"
+            ]
+          },
+          {
+            "id": "linalg-khan",
+            "name": "Linear Algebra — Khan Academy",
+            "instructor": "Sal Khan",
+            "university": "Khan Academy",
+            "platform": "Khan Academy",
+            "type": "Supplementary Course",
+            "format": "Videos + Practice Problems",
+            "url": "https://www.khanacademy.org/math/linear-algebra",
+            "isFree": true,
+            "rating": 4,
+            "description": "Excellent for brushing up on weak areas or getting a gentler first pass before MIT 18.06. Very interactive.",
+            "tags": [
+              "practice",
+              "review",
+              "supplementary",
+              "interactive"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-calculus",
+        "title": "Multivariable Calculus & Analysis",
+        "whyItMatters": "Backpropagation is the chain rule. Gradient descent is calculus. Jacobians and Hessians define how models learn.",
+        "mlConnections": [
+          "Gradient descent and variants (Adam, SGD)",
+          "Backpropagation = reverse-mode autodiff",
+          "Loss landscape analysis",
+          "Jacobians in normalizing flows",
+          "Hessians in second-order optimization"
+        ],
+        "priority": 2,
+        "phaseId": "phase-1",
+        "icon": "∂",
+        "color": "#0ea5e9",
+        "subtopics": [
+          "Limits and continuity",
+          "Differentiation — single and multivariable",
+          "Chain rule (THE most important rule in DL)",
+          "Partial derivatives and gradients",
+          "Directional derivatives",
+          "Jacobian and Hessian matrices",
+          "Taylor series and approximations",
+          "Integration — single and multivariable",
+          "Vector calculus — divergence, curl",
+          "Automatic differentiation intuition"
+        ],
+        "resources": [
+          {
+            "id": "calc-mit-1802",
+            "name": "Multivariable Calculus — MIT 18.02",
+            "instructor": "Prof. Denis Auroux",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full University Course",
+            "format": "Video Lectures + Problem Sets",
+            "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Complete multivariable calculus from MIT. Rigorous treatment of gradients, Jacobians, and vector fields — all essential for DL.",
+            "tags": [
+              "MIT",
+              "multivariable",
+              "gradients",
+              "rigorous"
+            ]
+          },
+          {
+            "id": "calc-3b1b",
+            "name": "Essence of Calculus",
+            "instructor": "Grant Sanderson (3Blue1Brown)",
+            "university": "Independent",
+            "platform": "YouTube",
+            "type": "Visual Intuition Series",
+            "format": "Animated Videos (12 episodes)",
+            "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+            "isFree": true,
+            "rating": 5,
+            "description": "Watch first. Builds pure geometric intuition for derivatives and integrals. The chain rule episode is especially brilliant for DL prep.",
+            "tags": [
+              "visual",
+              "intuition",
+              "chain-rule",
+              "starter"
+            ]
+          },
+          {
+            "id": "calc-icl",
+            "name": "Mathematics for ML: Multivariate Calculus",
+            "instructor": "Prof. Samuel Cooper + David Dye",
+            "university": "Imperial College London",
+            "platform": "Coursera (Audit Free)",
+            "type": "ML-Focused Calculus",
+            "format": "Video + Quizzes + Notebooks",
+            "url": "https://www.coursera.org/learn/multivariate-calculus-machine-learning",
+            "isFree": true,
+            "auditNote": "Audit for free",
+            "rating": 5,
+            "description": "Directly maps calculus to neural network training. Covers backprop mathematically, Jacobians in chain rules, Taylor approximations in optimization.",
+            "tags": [
+              "ML-focused",
+              "backprop",
+              "Imperial",
+              "practical"
+            ]
+          },
+          {
+            "id": "calc-khan",
+            "name": "Calculus — Khan Academy (Full Series)",
+            "instructor": "Sal Khan",
+            "university": "Khan Academy",
+            "platform": "Khan Academy",
+            "type": "Comprehensive Review",
+            "format": "Videos + Practice Problems",
+            "url": "https://www.khanacademy.org/math/multivariable-calculus",
+            "isFree": true,
+            "rating": 4,
+            "description": "Excellent for brushing up specific topics. Use alongside MIT 18.02 for extra practice on any weak areas.",
+            "tags": [
+              "practice",
+              "review",
+              "supplementary"
+            ]
+          },
+          {
+            "id": "calc-khan-single",
+            "name": "Single Variable Calculus — Khan Academy",
+            "instructor": "Sal Khan",
+            "university": "Khan Academy",
+            "platform": "Khan Academy",
+            "type": "Supplementary Course",
+            "format": "Videos + Practice Problems",
+            "url": "https://www.khanacademy.org/math/single-variable-calculus",
+            "isFree": true,
+            "rating": 4,
+            "description": "If multivariable feels too fast, start here. Covers limits, derivatives, and integrals with endless practice.",
+            "tags": [
+              "practice",
+              "review",
+              "supplementary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-prob-stats",
+        "title": "Probability & Statistics",
+        "whyItMatters": "Every ML model is a probabilistic model. Bayesian thinking, distributions, MLE, KL divergence — probability IS machine learning.",
+        "mlConnections": [
+          "Maximum Likelihood Estimation (MLE)",
+          "Bayesian inference and priors",
+          "KL Divergence in VAEs and diffusion",
+          "Probability distributions (Gaussian, Bernoulli, Categorical)",
+          "Markov Chains in MCMC",
+          "Information theory in transformers"
+        ],
+        "priority": 3,
+        "phaseId": "phase-1",
+        "icon": "P(x)",
+        "color": "#f59e0b",
+        "subtopics": [
+          "Sample space, events, probability axioms",
+          "Conditional probability and Bayes' theorem",
+          "Random variables — discrete and continuous",
+          "Expectation, variance, covariance",
+          "Common distributions: Gaussian, Binomial, Poisson, Categorical, Beta, Dirichlet",
+          "Joint, marginal, and conditional distributions",
+          "Law of Large Numbers and CLT",
+          "Maximum Likelihood Estimation (MLE)",
+          "Maximum A Posteriori (MAP)",
+          "Bayesian inference",
+          "Information theory: entropy, cross-entropy, KL divergence, mutual information"
+        ],
+        "resources": [
+          {
+            "id": "prob-mit-6041",
+            "name": "Probabilistic Systems Analysis — MIT 6.041",
+            "instructor": "Prof. John Tsitsiklis",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full University Course",
+            "format": "Video Lectures + Problem Sets",
+            "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Tsitsiklis is legendary. This is rigorous, proof-based probability that truly builds the foundation needed for statistical ML.",
+            "tags": [
+              "MIT",
+              "rigorous",
+              "Tsitsiklis",
+              "must-do"
+            ]
+          },
+          {
+            "id": "prob-stanford-cs109",
+            "name": "Probability for Computer Scientists — Stanford CS109",
+            "instructor": "Prof. Chris Piech",
+            "university": "Stanford",
+            "platform": "Stanford Engineering Everywhere",
+            "type": "Full University Course",
+            "format": "Video + Slides + Problem Sets",
+            "url": "https://web.stanford.edu/class/cs109/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Probability taught with CS applications in mind. Covers Bayesian networks, MLE, and connects strongly to ML. Notes are excellent.",
+            "tags": [
+              "Stanford",
+              "CS-focused",
+              "Bayes",
+              "MLE"
+            ]
+          },
+          {
+            "id": "prob-stat110",
+            "name": "Statistics 110: Probability — Harvard",
+            "instructor": "Prof. Joe Blitzstein",
+            "university": "Harvard",
+            "platform": "YouTube + Harvard website",
+            "type": "Full University Course",
+            "format": "Video Lectures + Book (free PDF)",
+            "url": "https://projects.iq.harvard.edu/stat110/home",
+            "isFree": true,
+            "rating": 5,
+            "description": "Beautifully taught probability with deep problem-solving intuition. The accompanying free textbook 'Introduction to Probability' is a gem.",
+            "tags": [
+              "Harvard",
+              "intuition",
+              "storytelling",
+              "free-book"
+            ]
+          },
+          {
+            "id": "prob-3b1b-bayes",
+            "name": "Bayes Theorem Visual Intuition",
+            "instructor": "Grant Sanderson (3Blue1Brown)",
+            "university": "Independent",
+            "platform": "YouTube",
+            "type": "Concept Video",
+            "format": "Video",
+            "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM",
+            "isFree": true,
+            "rating": 5,
+            "description": "Single best video to understand Bayes' theorem visually. Watch early in your probability journey.",
+            "tags": [
+              "visual",
+              "Bayes",
+              "intuition"
+            ]
+          },
+          {
+            "id": "prob-book-blitzstein",
+            "name": "Introduction to Probability (Free Textbook)",
+            "instructor": "Prof. Joe Blitzstein & Jessica Hwang",
+            "university": "Harvard",
+            "platform": "Harvard / CRC Press",
+            "type": "Free Textbook",
+            "format": "PDF + Code",
+            "url": "https://projects.iq.harvard.edu/stat110/home",
+            "isFree": true,
+            "rating": 5,
+            "description": "The companion textbook to Stat 110. Free PDF available. Story-based approach with R/Python code examples. A gem.",
+            "tags": [
+              "Harvard",
+              "free-book",
+              "Stat110",
+              "storytelling"
+            ]
+          },
+          {
+            "id": "prob-google-crash",
+            "name": "Machine Learning Crash Course (Google) — Probability Primer",
+            "instructor": "Google",
+            "university": "Google",
+            "platform": "developers.google.com",
+            "type": "ML-Focused Primer",
+            "format": "Interactive Lessons + Colab Notebooks",
+            "url": "https://developers.google.com/machine-learning/crash-course",
+            "isFree": true,
+            "rating": 4,
+            "description": "Not a full probability course, but excellent for seeing how probability concepts immediately apply to ML. Great sanity check after theory courses.",
+            "tags": [
+              "Google",
+              "ML-focused",
+              "interactive",
+              "applied"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-optimization",
+        "title": "Optimization Theory",
+        "whyItMatters": "Training an AI model = solving an optimization problem. Convexity, saddle points, learning rates, second-order methods — all optimization.",
+        "mlConnections": [
+          "Gradient descent and SGD variants",
+          "Adam, RMSProp, AdaGrad",
+          "Convex vs non-convex loss landscapes",
+          "Second-order methods (Newton, L-BFGS)",
+          "Constrained optimization in RL",
+          "Lagrangians in SVMs"
+        ],
+        "priority": 4,
+        "phaseId": "phase-1",
+        "icon": "argmin",
+        "color": "#10b981",
+        "subtopics": [
+          "Convex sets and convex functions",
+          "Gradient descent and convergence proofs",
+          "Stochastic gradient descent (SGD)",
+          "Momentum and adaptive methods",
+          "Saddle points and local minima",
+          "Lagrangians and constrained optimization (KKT conditions)",
+          "Second-order methods: Newton, quasi-Newton",
+          "Learning rate schedules",
+          "Proximal methods"
+        ],
+        "resources": [
+          {
+            "id": "opt-stanford-ee364",
+            "name": "Convex Optimization — Stanford EE364A",
+            "instructor": "Prof. Stephen Boyd",
+            "university": "Stanford",
+            "platform": "Stanford Engineering Everywhere",
+            "type": "Full University Course",
+            "format": "Video + Slides + Problem Sets + Free Textbook",
+            "url": "https://web.stanford.edu/class/ee364a/",
+            "isFree": true,
+            "rating": 5,
+            "description": "The definitive optimization course. Boyd's textbook is free online. Covers everything from convex sets to duality to SDP. Used by researchers worldwide.",
+            "tags": [
+              "Stanford",
+              "Boyd",
+              "convex",
+              "textbook-free",
+              "research-grade"
+            ]
+          },
+          {
+            "id": "opt-cmu-10725",
+            "name": "Convex Optimization — CMU 10-725",
+            "instructor": "Prof. Ryan Tibshirani",
+            "university": "Carnegie Mellon University",
+            "platform": "CMU course website",
+            "type": "Full University Course",
+            "format": "Lecture Notes + Videos",
+            "url": "https://www.stat.cmu.edu/~ryantibs/convexopt/",
+            "isFree": true,
+            "rating": 5,
+            "description": "CMU's ML-focused optimization course. Notes are exceptionally well-written. Covers proximal methods, coordinate descent, and stochastic methods.",
+            "tags": [
+              "CMU",
+              "ML-focused",
+              "notes",
+              "proximal"
+            ]
+          },
+          {
+            "id": "opt-mit-1860",
+            "name": "Nonlinear Optimization — MIT 15.084J",
+            "instructor": "Prof. Robert Freund",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full University Course",
+            "format": "Lecture Notes + Problem Sets",
+            "url": "https://ocw.mit.edu/courses/15-084j-nonlinear-programming-spring-2004/",
+            "isFree": true,
+            "rating": 4,
+            "description": "Non-convex and constrained optimization. Important for understanding the loss landscapes of deep networks.",
+            "tags": [
+              "MIT",
+              "non-convex",
+              "constrained"
+            ]
+          },
+          {
+            "id": "opt-boyd-book",
+            "name": "Convex Optimization (Free Textbook)",
+            "instructor": "Prof. Stephen Boyd & Lieven Vandenberghe",
+            "university": "Stanford",
+            "platform": "Stanford / Cambridge University Press",
+            "type": "Free Textbook",
+            "format": "PDF",
+            "url": "https://web.stanford.edu/~boyd/cvxbook/",
+            "isFree": true,
+            "rating": 5,
+            "description": "The textbook for EE364a. Completely free. The definitive reference for convex optimization in ML.",
+            "tags": [
+              "Stanford",
+              "Boyd",
+              "textbook-free",
+              "reference",
+              "bible"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-info-theory",
+        "title": "Information Theory",
+        "whyItMatters": "Cross-entropy loss, KL divergence, mutual information, ELBO — information theory is everywhere in modern AI.",
+        "mlConnections": [
+          "Cross-entropy loss function",
+          "KL divergence in VAEs",
+          "ELBO in generative models",
+          "Mutual information in representation learning",
+          "Shannon entropy in decision trees",
+          "Bits and model compression"
+        ],
+        "priority": 5,
+        "phaseId": "phase-1",
+        "icon": "H(x)",
+        "color": "#ec4899",
+        "subtopics": [
+          "Shannon entropy",
+          "Joint entropy and conditional entropy",
+          "Mutual information",
+          "KL divergence (relative entropy)",
+          "Cross-entropy and its use as a loss function",
+          "Jensen's inequality",
+          "Data compression intuition"
+        ],
+        "resources": [
+          {
+            "id": "info-mit-6441",
+            "name": "Information Theory — MIT 6.441",
+            "instructor": "Prof. Yury Polyanskiy",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full University Course",
+            "format": "Lecture Notes + Problem Sets",
+            "url": "https://ocw.mit.edu/courses/6-441-information-theory-spring-2016/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Rigorous information theory. Cover the first 8 lectures for ML-relevant content: entropy, KL divergence, channel capacity.",
+            "tags": [
+              "MIT",
+              "rigorous",
+              "entropy",
+              "KL"
+            ]
+          },
+          {
+            "id": "info-shannon-visually",
+            "name": "Visual Information Theory",
+            "instructor": "Chris Olah",
+            "university": "Independent (Distill.pub)",
+            "platform": "Blog (distill.pub)",
+            "type": "Interactive Blog Post",
+            "format": "Interactive Article",
+            "url": "https://colah.github.io/posts/2015-09-Visual-Information/",
+            "isFree": true,
+            "rating": 5,
+            "description": "The best single introduction to information theory. Interactive visualizations of entropy, KL divergence, and cross entropy. Must-read.",
+            "tags": [
+              "visual",
+              "interactive",
+              "intuition",
+              "must-read"
+            ]
+          },
+          {
+            "id": "info-mackay",
+            "name": "Information Theory, Inference, and Learning Algorithms",
+            "instructor": "Prof. David MacKay",
+            "university": "University of Cambridge",
+            "platform": "Cambridge University Press (Free PDF)",
+            "type": "Free Textbook",
+            "format": "PDF + Exercises",
+            "url": "https://www.inference.org.uk/itprnn/book.html",
+            "isFree": true,
+            "rating": 5,
+            "description": "A masterpiece that connects information theory directly to ML algorithms. Free from Cambridge. Covers entropy, coding, Monte Carlo methods, and neural networks.",
+            "tags": [
+              "Cambridge",
+              "MacKay",
+              "free-book",
+              "bible",
+              "ML-connection"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-discrete",
+        "title": "Discrete Math & Algorithms (for AI)",
+        "whyItMatters": "Graph neural networks need graph theory. Attention is set theory. Dynamic programming underlies RL.",
+        "mlConnections": [
+          "Graph Neural Networks (GNNs)",
+          "Attention mechanism as set functions",
+          "Dynamic programming in RL",
+          "Complexity of training algorithms"
+        ],
+        "priority": 6,
+        "phaseId": "phase-1",
+        "icon": "G(V,E)",
+        "color": "#0891b2",
+        "subtopics": [
+          "Graph theory — nodes, edges, paths, trees",
+          "Combinatorics and counting",
+          "Proof techniques — induction, contradiction",
+          "Complexity: O-notation, P vs NP intuition",
+          "Dynamic programming",
+          "Sorting and search algorithms"
+        ],
+        "resources": [
+          {
+            "id": "discrete-mit-6042",
+            "name": "Mathematics for CS — MIT 6.042J",
+            "instructor": "Prof. Tom Leighton & Marten van Dijk",
+            "university": "MIT",
+            "platform": "MIT OpenCourseWare",
+            "type": "Full University Course",
+            "format": "Video + Problem Sets + Free Textbook",
+            "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/",
+            "isFree": true,
+            "rating": 5,
+            "description": "Logic, proofs, induction, graphs, probability — all through a CS lens. The problem sets are legendary.",
+            "tags": [
+              "MIT",
+              "proofs",
+              "graphs",
+              "CS-focused"
+            ]
+          },
+          {
+            "id": "discrete-graph-theory",
+            "name": "Graph Theory — Reinhard Diestel (Free Electronic Edition)",
+            "instructor": "Reinhard Diestel",
+            "university": "Universität Hamburg",
+            "platform": "Official Website",
+            "type": "Free Textbook (Electronic Edition)",
+            "format": "PDF",
+            "url": "https://diestel-graph-theory.com/",
+            "isFree": true,
+            "rating": 4,
+            "description": "Standard graduate graph theory text. Electronic edition is free. Excellent reference for GNNs and combinatorial ML.",
+            "tags": [
+              "graph-theory",
+              "free-book",
+              "reference",
+              "GNN-prep"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "pythonML": {
+    "sectionTitle": "Python for AI & ML",
+    "sectionSubtitle": "Scientific stack mastery — from arrays to GPU tensors",
+    "phaseId": "phase-2",
+    "topics": [
+      {
+        "id": "py-numpy",
+        "title": "NumPy — Vectorized Computing",
+        "description": "The backbone of all numerical computing in Python. Everything in ML is NumPy at its core.",
+        "keySkills": [
+          "ndarray operations",
+          "Broadcasting",
+          "Vectorization vs loops",
+          "Matrix ops",
+          "Random number generation"
+        ],
+        "resources": [
+          {
+            "id": "numpy-stanford",
+            "name": "Python/NumPy Tutorial — Stanford CS231n",
+            "university": "Stanford",
+            "url": "https://cs231n.github.io/python-numpy-tutorial/",
+            "type": "Tutorial",
+            "isFree": true,
+            "description": "The best concise NumPy tutorial. Written for DL students. Covers all essential ops with ML context."
+          },
+          {
+            "id": "numpy-official",
+            "name": "NumPy Official Docs + Tutorials",
+            "university": "NumPy",
+            "url": "https://numpy.org/learn/",
+            "type": "Official Docs",
+            "isFree": true,
+            "description": "Use the 'Absolute Beginner' guide then the 'NumPy for MATLAB users' if you have any numerical background."
+          }
+        ]
+      },
+      {
+        "id": "py-pandas",
+        "title": "Pandas — Data Wrangling",
+        "description": "Real-world ML data is messy. Pandas is how you clean, explore, and transform it.",
+        "keySkills": [
+          "DataFrames",
+          "Merging & groupby",
+          "Handling missing data",
+          "Time series",
+          "Vectorized string ops"
+        ],
+        "resources": [
+          {
+            "id": "pandas-kaggle",
+            "name": "Pandas — Kaggle Learn",
+            "university": "Kaggle",
+            "url": "https://www.kaggle.com/learn/pandas",
+            "type": "Interactive Course",
+            "isFree": true,
+            "description": "Best free interactive Pandas course. 6 lessons, all in-browser Jupyter. Practical and fast."
+          }
+        ]
+      },
+      {
+        "id": "py-pytorch",
+        "title": "PyTorch — Deep Learning Framework",
+        "description": "The primary research and production framework. You will write most of your custom architectures in PyTorch.",
+        "keySkills": [
+          "Tensors & autograd",
+          "nn.Module",
+          "Custom layers",
+          "DataLoader",
+          "Training loops",
+          "GPU acceleration",
+          "torch.compile"
+        ],
+        "resources": [
+          {
+            "id": "pytorch-official",
+            "name": "PyTorch Official Tutorials",
+            "university": "PyTorch",
+            "url": "https://pytorch.org/tutorials/",
+            "type": "Official Tutorials",
+            "isFree": true,
+            "description": "Start with 'Deep Learning with PyTorch: A 60 Minute Blitz'. Then do 'Learning PyTorch with Examples'."
+          },
+          {
+            "id": "pytorch-nn-zero",
+            "name": "Neural Networks: Zero to Hero — Andrej Karpathy",
+            "instructor": "Andrej Karpathy (former Tesla AI Director, OpenAI co-founder)",
+            "university": "Independent",
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+            "type": "Video Series (6 lectures)",
+            "isFree": true,
+            "rating": 5,
+            "description": "Absolute must-watch. Karpathy builds micrograd (autograd engine), makemore (character LM), and GPT from scratch. Teaches you to think like a model architect.",
+            "tags": [
+              "must-watch",
+              "Karpathy",
+              "from-scratch",
+              "autograd",
+              "GPT"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "py-jax",
+        "title": "JAX — Functional Deep Learning",
+        "description": "Google's NumPy + autograd + JIT + vmap. Used in cutting-edge research. Growing rapidly.",
+        "keySkills": [
+          "jit compilation",
+          "grad transform",
+          "vmap vectorization",
+          "pmap parallelism",
+          "Flax/Haiku layers"
+        ],
+        "resources": [
+          {
+            "id": "jax-quickstart",
+            "name": "JAX Quickstart (Official)",
+            "university": "Google DeepMind",
+            "url": "https://jax.readthedocs.io/en/latest/quickstart.html",
+            "type": "Official Tutorial",
+            "isFree": true,
+            "description": "Official JAX docs. Start with the quickstart then move to the JAX 101 tutorial series."
+          }
+        ]
+      },
+      {
+        "id": "py-viz",
+        "title": "Data Visualization",
+        "description": "You can't understand what you can't see. Matplotlib, Seaborn, and interactive plotting for EDA and model interpretation.",
+        "keySkills": [
+          "Matplotlib",
+          "Seaborn",
+          "Plotly",
+          "EDA visualization",
+          "Training curves"
+        ],
+        "resources": [
+          {
+            "id": "viz-python-data-science-handbook",
+            "name": "Python Data Science Handbook (Visualization Chapters)",
+            "instructor": "Jake VanderPlas",
+            "university": "Independent",
+            "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+            "type": "Free Book (Online)",
+            "isFree": true,
+            "description": "Comprehensive, free online book. Chapters on Matplotlib and Seaborn are the best free resource for visualization in Python."
+          },
+          {
+            "id": "viz-matplotlib-official",
+            "name": "Matplotlib Official Tutorials",
+            "instructor": "Matplotlib Team",
+            "university": "Matplotlib",
+            "url": "https://matplotlib.org/stable/tutorials/index.html",
+            "type": "Official Tutorials",
+            "isFree": true,
+            "description": "Start with 'Pyplot Tutorial' and 'Image Tutorial'. Essential for plotting loss curves, weights histograms, and activation maps."
+          }
+        ]
+      },
+      {
+        "id": "py-tools",
+        "title": "Developer Tools & Environment",
+        "description": "Jupyter, Git, Linux basics, and the command line. The tooling literacy every self-taught researcher needs.",
+        "keySkills": [
+          "Jupyter Notebooks",
+          "Git & GitHub",
+          "Linux CLI",
+          "Virtual environments",
+          "Colab/Kaggle notebooks"
+        ],
+        "resources": [
+          {
+            "id": "tools-missing-semester",
+            "name": "The Missing Semester of Your CS Education",
+            "instructor": "MIT CSAIL",
+            "university": "MIT",
+            "url": "https://missing.csail.mit.edu/",
+            "type": "Free Course",
+            "isFree": true,
+            "description": "MIT's free course on all the tools you actually use: command line, Git, Vim, data wrangling with CLI. Absolutely essential for self-learners.",
+            "tags": [
+              "MIT",
+              "Git",
+              "CLI",
+              "must-do"
+            ]
+          },
+          {
+            "id": "tools-github-skills",
+            "name": "GitHub Skills",
+            "instructor": "GitHub",
+            "university": "GitHub",
+            "url": "https://skills.github.com/",
+            "type": "Interactive Tutorials",
+            "isFree": true,
+            "description": "Learn Git and GitHub by doing, inside GitHub itself. Create repos, branches, pull requests, and merge conflicts with guided bots.",
+            "tags": [
+              "GitHub",
+              "interactive",
+              "Git",
+              "beginner-friendly"
+            ]
+          },
+          {
+            "id": "tools-jupyter-realpython",
+            "name": "Jupyter Notebook: An Introduction (Real Python)",
+            "instructor": "Real Python",
+            "university": "Real Python",
+            "url": "https://realpython.com/jupyter-notebook-introduction/",
+            "type": "Tutorial",
+            "isFree": true,
+            "description": "Comprehensive free tutorial on Jupyter. Covers installation, magic commands, plotting inline, and best practices for ML experiments."
+          }
+        ]
+      }
+    ]
+  },
+  "machineLearning": {
+    "sectionTitle": "Classical Machine Learning",
+    "sectionSubtitle": "Understand every algorithm: math-first, implement from scratch, then use the library",
+    "phaseId": "phase-3",
+    "courses": [
+      {
+        "id": "ml-stanford-cs229",
+        "name": "Machine Learning — Stanford CS229",
+        "instructor": "Prof. Andrew Ng",
+        "university": "Stanford",
+        "platform": "Stanford Engineering Everywhere / YouTube",
+        "type": "Full University Course",
+        "format": "Video + Lecture Notes + Problem Sets",
+        "url": "https://cs229.stanford.edu/",
+        "videoUrl": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy",
+        "isFree": true,
+        "rating": 5,
+        "duration": "~19 weeks",
+        "description": "The most comprehensive ML course in existence. Covers linear regression, logistic regression, SVMs, neural nets, EM algorithm, and more — all mathematically. Lecture notes are standalone textbooks.",
+        "topics": [
+          "Supervised Learning",
+          "Generative Models",
+          "SVMs",
+          "Neural Networks",
+          "Unsupervised Learning",
+          "EM Algorithm",
+          "RL Intro"
+        ],
+        "tags": [
+          "Stanford",
+          "Andrew Ng",
+          "math-heavy",
+          "gold-standard",
+          "must-do"
+        ]
+      },
+      {
+        "id": "ml-cmu-10701",
+        "name": "Machine Learning — CMU 10-701",
+        "instructor": "Various (Barnabas Poczos, Maria Florina Balcan)",
+        "university": "Carnegie Mellon University",
+        "platform": "CMU Course website",
+        "type": "Full University Course — PhD Level",
+        "format": "Lecture Slides + Scribes + Videos",
+        "url": "https://www.cs.cmu.edu/~ninamf/courses/601sp15/index.html",
+        "isFree": true,
+        "rating": 5,
+        "description": "PhD-level ML at CMU. More theoretically rigorous than CS229. PAC learning, VC dimension, kernel theory. For those who want depth.",
+        "topics": [
+          "PAC Learning",
+          "VC Dimension",
+          "Kernels",
+          "Graphical Models",
+          "Spectral Methods"
+        ],
+        "tags": [
+          "CMU",
+          "PhD-level",
+          "theory",
+          "rigorous"
+        ]
+      },
+      {
+        "id": "ml-ubc-nando",
+        "name": "Machine Learning — UBC (Nando de Freitas)",
+        "instructor": "Prof. Nando de Freitas",
+        "university": "University of British Columbia / Oxford",
+        "platform": "YouTube",
+        "type": "Full University Course",
+        "format": "Video Lectures",
+        "url": "https://www.youtube.com/playlist?list=PLE6Wd9FR--Ecf_5nCbnSQMHqORpiChfJf",
+        "isFree": true,
+        "rating": 5,
+        "description": "Nando de Freitas (now at DeepMind) teaches ML with exceptional clarity. Bayesian approach throughout. Bridges classical ML and deep learning beautifully.",
+        "tags": [
+          "Oxford",
+          "Bayesian",
+          "de Freitas",
+          "DL-bridge"
+        ]
+      },
+      {
+        "id": "ml-sklearn",
+        "name": "Scikit-Learn Official User Guide",
+        "instructor": "Scikit-learn team",
+        "university": "Open Source",
+        "platform": "scikit-learn.org",
+        "type": "Reference + Tutorials",
+        "format": "Documentation + Code Examples",
+        "url": "https://scikit-learn.org/stable/user_guide.html",
+        "isFree": true,
+        "rating": 5,
+        "description": "After understanding algorithms mathematically, implement with sklearn. The best ML library documentation that exists.",
+        "tags": [
+          "practical",
+          "sklearn",
+          "implementation"
+        ]
+      },
+      {
+        "id": "ml-caltech",
+        "name": "Learning From Data — Caltech",
+        "instructor": "Prof. Yaser Abu-Mostafa",
+        "university": "California Institute of Technology",
+        "platform": "Caltech / YouTube",
+        "type": "Full University Course",
+        "format": "Video Lectures + Free Textbook (PDF)",
+        "url": "https://work.caltech.edu/telecourse.html",
+        "videoUrl": "https://www.youtube.com/playlist?list=PLD63A284B7615313A",
+        "isFree": true,
+        "rating": 5,
+        "duration": "~10 weeks",
+        "description": "Theoretical but incredibly clear. Abu-Mostafa focuses on the *why* behind learning theory. Free textbook 'Learning From Data' accompanies the course. Excellent for understanding generalization.",
+        "topics": [
+          "Learning Theory",
+          "Generalization",
+          "VC Dimension",
+          "Regularization",
+          "Kernel Methods"
+        ],
+        "tags": [
+          "Caltech",
+          "theory",
+          "Abu-Mostafa",
+          "free-book",
+          "must-do"
+        ]
+      },
+      {
+        "id": "ml-isl",
+        "name": "An Introduction to Statistical Learning (ISL)",
+        "instructor": "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani",
+        "university": "Stanford / USC / University of Washington",
+        "platform": "statlearning.com",
+        "type": "Free Textbook + Video Course",
+        "format": "Free PDF + YouTube Videos + R/Python Labs",
+        "url": "https://www.statlearning.com/",
+        "isFree": true,
+        "rating": 5,
+        "description": "The most popular ML textbook in the world. Free PDF. Gentle but rigorous coverage of regression, classification, trees, SVMs, unsupervised learning. Python labs available.",
+        "topics": [
+          "Linear Regression",
+          "Classification",
+          "Resampling",
+          "Linear Model Selection",
+          "Trees",
+          "SVM",
+          "Unsupervised Learning"
+        ],
+        "tags": [
+          "Stanford",
+          "bible",
+          "free-book",
+          "beginner-friendly",
+          "practical"
+        ]
+      },
+      {
+        "id": "ml-google-crash",
+        "name": "Machine Learning Crash Course",
+        "instructor": "Google",
+        "university": "Google",
+        "platform": "Google Developers",
+        "type": "Fast Primer",
+        "format": "Interactive Lessons + Colab Notebooks + Videos",
+        "url": "https://developers.google.com/machine-learning/crash-course",
+        "isFree": true,
+        "rating": 4,
+        "duration": "~15 hours",
+        "description": "Google's fast, practical introduction. Heavy on TensorFlow but concepts are universal. Great for a quick applied pass before diving into CS229 theory.",
+        "topics": [
+          "Linear Regression",
+          "Classification",
+          "Neural Networks",
+          "Regularization",
+          "Embeddings"
+        ],
+        "tags": [
+          "Google",
+          "fast",
+          "applied",
+          "TensorFlow",
+          "interactive"
+        ]
+      }
+    ]
+  },
+  "deepLearning": {
+    "sectionTitle": "Deep Learning",
+    "sectionSubtitle": "From a single neuron to training transformers — implement everything from scratch",
+    "phaseId": "phase-4",
+    "courses": [
+      {
+        "id": "dl-stanford-cs231n",
+        "name": "Convolutional Neural Networks — Stanford CS231n",
+        "instructor": "Andrej Karpathy, Fei-Fei Li, Justin Johnson",
+        "university": "Stanford",
+        "platform": "Stanford / YouTube",
+        "type": "Full University Course",
+        "format": "Video + Notes + Assignments",
+        "url": "http://cs231n.stanford.edu/",
+        "videoUrl": "https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv",
+        "isFree": true,
+        "rating": 5,
+        "description": "THE vision deep learning course. CNNs, backprop, batch norm, transfer learning, detection, segmentation. Assignments include building a full neural network from scratch in NumPy.",
+        "topics": [
+          "Backpropagation",
+          "CNNs",
+          "RNNs",
+          "Detection",
+          "Segmentation",
+          "GANs intro"
+        ],
+        "tags": [
+          "Stanford",
+          "Karpathy",
+          "vision",
+          "must-do",
+          "from-scratch"
+        ]
+      },
+      {
+        "id": "dl-stanford-cs224n",
+        "name": "NLP with Deep Learning — Stanford CS224N",
+        "instructor": "Prof. Chris Manning",
+        "university": "Stanford",
+        "platform": "Stanford / YouTube",
+        "type": "Full University Course",
+        "format": "Video + Notes + Assignments",
+        "url": "https://web.stanford.edu/class/cs224n/",
+        "videoUrl": "https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4",
+        "isFree": true,
+        "rating": 5,
+        "description": "The definitive NLP/LLM course. Covers word2vec, LSTMs, attention, transformers, BERT, GPT, pretraining, and more. Assignments are world-class.",
+        "topics": [
+          "Word Vectors",
+          "Dependency Parsing",
+          "RNNs/LSTMs",
+          "Transformers",
+          "BERT & GPT",
+          "Low-Resource NLP"
+        ],
+        "tags": [
+          "Stanford",
+          "NLP",
+          "transformers",
+          "BERT",
+          "GPT",
+          "Manning"
+        ]
+      },
+      {
+        "id": "dl-deeplearning-ai",
+        "name": "Deep Learning Specialization",
+        "instructor": "Andrew Ng",
+        "university": "deeplearning.ai",
+        "platform": "Coursera (Audit Free)",
+        "type": "Specialization (5 Courses)",
+        "format": "Video + Assignments + Notebooks",
+        "url": "https://www.coursera.org/specializations/deep-learning",
+        "isFree": true,
+        "auditNote": "Audit all 5 courses for free",
+        "rating": 4,
+        "description": "Covers NNs, CNNs, RNNs, hyperparameter tuning, and sequence models. More accessible than CS231n. Good for cementing fundamentals.",
+        "topics": [
+          "NN Basics",
+          "Improving NNs",
+          "Structuring ML",
+          "CNNs",
+          "Sequence Models"
+        ],
+        "tags": [
+          "Andrew Ng",
+          "beginner-friendly",
+          "practical",
+          "Coursera"
+        ]
+      },
+      {
+        "id": "dl-fastai",
+        "name": "Practical Deep Learning for Coders (fast.ai)",
+        "instructor": "Jeremy Howard, Rachel Thomas",
+        "university": "fast.ai",
+        "platform": "fast.ai",
+        "type": "Full Course",
+        "format": "Video + Notebooks + Book",
+        "url": "https://course.fast.ai/",
+        "isFree": true,
+        "rating": 5,
+        "description": "Top-down, code-first approach. Build state-of-art models from lesson 1. Complementary to bottom-up courses. Teaches practical intuitions that academic courses miss.",
+        "topics": [
+          "Image Classification",
+          "NLP",
+          "Tabular",
+          "Collaborative Filtering",
+          "Diffusion Models"
+        ],
+        "tags": [
+          "practical",
+          "top-down",
+          "Jeremy Howard",
+          "code-first"
+        ]
+      },
+      {
+        "id": "dl-ug-toronto",
+        "name": "Neural Networks for ML — Geoffrey Hinton (Toronto)",
+        "instructor": "Prof. Geoffrey Hinton",
+        "university": "University of Toronto",
+        "platform": "Coursera (Free Archive / YouTube)",
+        "type": "Classic University Course",
+        "format": "Video Lectures",
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOABXSygHTsbvzvSBN41ZsW",
+        "isFree": true,
+        "rating": 5,
+        "description": "The Godfather of Deep Learning teaching his own field. Historical and deeply insightful. Covers RBMs, DBNs, backprop from first principles.",
+        "tags": [
+          "Hinton",
+          "godfather",
+          "historical",
+          "RBM",
+          "foundational"
+        ]
+      },
+      {
+        "id": "dl-nyu-yann",
+        "name": "Deep Learning — NYU (Yann LeCun & Alfredo Canziani)",
+        "instructor": "Prof. Yann LeCun, Alfredo Canziani",
+        "university": "New York University",
+        "platform": "NYU / YouTube",
+        "type": "Full University Course",
+        "format": "Video + Jupyter Notebooks + Homework",
+        "url": "https://atcold.github.io/pytorch-Deep-Learning/",
+        "videoUrl": "https://www.youtube.com/playlist?list=PLLHTzKZzVU9e6xUfG10TkWApnZCqPYSxm",
+        "isFree": true,
+        "rating": 5,
+        "description": "LeCun (Godfather of CNNs) teaches deep learning with strong geometric intuition. All materials free. Uses PyTorch. Covers CNNs, RNNs, VAEs, GANs, and modern topics. Highly underrated.",
+        "topics": [
+          "CNNs",
+          "RNNs",
+          "VAEs",
+          "GANs",
+          "Graph Networks",
+          "Self-Supervised Learning"
+        ],
+        "tags": [
+          "NYU",
+          "LeCun",
+          "PyTorch",
+          "geometric",
+          "underrated",
+          "must-do"
+        ]
+      },
+      {
+        "id": "dl-d2l",
+        "name": "Dive into Deep Learning (d2l.ai)",
+        "instructor": "Aston Zhang, Zachary C. Lipton, Mu Li, Alexander J. Smola",
+        "university": "Amazon / UCLA / Stanford / CMU",
+        "platform": "d2l.ai",
+        "type": "Interactive Free Textbook + Course",
+        "format": "Online Book + PyTorch/MXNet/TensorFlow Code + Exercises",
+        "url": "https://d2l.ai/",
+        "isFree": true,
+        "rating": 5,
+        "description": "The best interactive DL book. Every chapter has runnable code. Covers everything from MLPs to Transformers to RL. Constantly updated. A complete self-contained curriculum.",
+        "topics": [
+          "MLP",
+          "CNNs",
+          "RNNs",
+          "Attention",
+          "Transformers",
+          "Optimization",
+          "Computer Vision",
+          "NLP"
+        ],
+        "tags": [
+          "interactive",
+          "code-first",
+          "multi-framework",
+          "complete-curriculum",
+          "must-do"
+        ]
+      },
+      {
+        "id": "dl-nielsen",
+        "name": "Neural Networks and Deep Learning",
+        "instructor": "Michael Nielsen",
+        "university": "Independent",
+        "platform": "neuralnetworksanddeeplearning.com",
+        "type": "Free Online Book",
+        "format": "Web Book + Code",
+        "url": "http://neuralnetworksanddeeplearning.com/",
+        "isFree": true,
+        "rating": 5,
+        "description": "A beautiful, gentle introduction that builds intuition from scratch. Nielsen explains backpropagation better than almost anyone. Free online. Perfect companion to video courses.",
+        "topics": [
+          "NN Basics",
+          "Backpropagation",
+          "MNIST from scratch",
+          "Deep Learning",
+          "CNNs intro"
+        ],
+        "tags": [
+          "free-book",
+          "intuition",
+          "beginner-friendly",
+          "backprop",
+          "classic"
+        ]
+      },
+      {
+        "id": "dl-hf-nlp",
+        "name": "Hugging Face NLP Course",
+        "instructor": "Hugging Face Team",
+        "university": "Hugging Face",
+        "platform": "Hugging Face",
+        "type": "Interactive Course",
+        "format": "Articles + Code + Colab Notebooks",
+        "url": "https://huggingface.co/learn/nlp-course",
+        "isFree": true,
+        "rating": 5,
+        "description": "The practical standard for NLP and Transformers. Learn to use Transformers library, tokenizers, datasets, and fine-tune BERT/GPT. Essential for applied LLM work.",
+        "topics": [
+          "Transformers",
+          "BERT",
+          "GPT",
+          "Tokenization",
+          "Fine-tuning",
+          "Datasets",
+          "Deployment"
+        ],
+        "tags": [
+          "HuggingFace",
+          "practical",
+          "NLP",
+          "Transformers",
+          "must-do",
+          "code-first"
+        ]
+      }
+    ]
+  },
+  "architectures": {
+    "sectionTitle": "Advanced Architectures & Research",
+    "sectionSubtitle": "Study, implement, and innovate on the architectures that define modern AI",
+    "phaseId": "phase-5",
+    "architectureGroups": [
+      {
+        "id": "arch-transformers",
+        "groupTitle": "Transformers & Attention",
+        "description": "The architecture that unified NLP, vision, audio, and more. Understanding attention is non-negotiable for any AI researcher.",
+        "icon": "🔥",
+        "architectures": [
+          "Vanilla Transformer (Vaswani 2017 — Attention Is All You Need)",
+          "BERT (Bidirectional Encoder)",
+          "GPT Series (Autoregressive Decoder)",
+          "T5 (Encoder-Decoder)",
+          "Vision Transformer (ViT)",
+          "Swin Transformer",
+          "Flash Attention & Efficient Attention variants",
+          "Multi-Query Attention, Grouped-Query Attention",
+          "RoPE and ALiBi positional encodings",
+          "Mixture of Experts (MoE) — GPT-4, Mixtral"
+        ],
+        "resources": [
+          {
+            "id": "arch-transformer-annotated",
+            "name": "The Annotated Transformer",
+            "instructor": "Alexander Rush (Harvard/Cornell)",
+            "university": "Harvard",
+            "url": "https://nlp.seas.harvard.edu/annotated-transformer/",
+            "type": "Annotated Implementation",
+            "isFree": true,
+            "rating": 5,
+            "description": "Full implementation of 'Attention Is All You Need' paper with line-by-line annotation. The single best resource for understanding transformers deeply.",
+            "tags": [
+              "implementation",
+              "must-read",
+              "Harvard",
+              "paper-walkthrough"
+            ]
+          },
+          {
+            "id": "arch-karpathy-gpt",
+            "name": "Let's build GPT: from scratch, in code",
+            "instructor": "Andrej Karpathy",
+            "university": "Independent",
+            "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+            "type": "Live Coding Video (2 hours)",
+            "isFree": true,
+            "rating": 5,
+            "description": "Karpathy builds GPT-2 from scratch in PyTorch, live. 2 hours. The best architecture tutorial on the internet. Watch twice.",
+            "tags": [
+              "Karpathy",
+              "GPT",
+              "from-scratch",
+              "must-watch"
+            ]
+          },
+          {
+            "id": "arch-transformer-3b1b",
+            "name": "Attention in Transformers — 3Blue1Brown",
+            "instructor": "Grant Sanderson",
+            "university": "Independent",
+            "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+            "type": "Visual Explanation",
+            "isFree": true,
+            "rating": 5,
+            "description": "Stunning visual walkthrough of multi-head attention. Watch before implementing.",
+            "tags": [
+              "visual",
+              "attention",
+              "intuition"
+            ]
+          },
+          {
+            "id": "arch-stanford-cs25",
+            "name": "Transformers United — Stanford CS25",
+            "instructor": "Various Stanford / Industry speakers",
+            "university": "Stanford",
+            "url": "https://web.stanford.edu/class/cs25/",
+            "type": "Seminar Series",
+            "format": "Video Lectures",
+            "isFree": true,
+            "rating": 5,
+            "description": "Guest lectures from researchers building the world's most advanced models. Each lecture covers a different transformer variant or application.",
+            "tags": [
+              "Stanford",
+              "research",
+              "seminars",
+              "industry"
+            ]
+          },
+          {
+            "id": "arch-hf-transformers",
+            "name": "Hugging Face Transformers Docs & Tutorials",
+            "instructor": "Hugging Face Team",
+            "university": "Hugging Face",
+            "url": "https://huggingface.co/docs/transformers/index",
+            "type": "Official Documentation + Tutorials",
+            "isFree": true,
+            "rating": 5,
+            "description": "The standard library for pretrained transformers. Tutorials cover BERT, GPT, T5, Vision Transformers, and custom architectures. Essential reference.",
+            "tags": [
+              "HuggingFace",
+              "reference",
+              "practical",
+              "must-bookmark"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arch-generative",
+        "groupTitle": "Generative Models",
+        "description": "VAEs, GANs, diffusion models, flow-matching — the architecture family behind image, audio, and video generation.",
+        "icon": "🎨",
+        "architectures": [
+          "Variational Autoencoders (VAEs) — Kingma & Welling 2013",
+          "Generative Adversarial Networks (GANs)",
+          "Normalizing Flows",
+          "Denoising Diffusion Probabilistic Models (DDPM)",
+          "Score-based Models",
+          "Flow Matching",
+          "Latent Diffusion (Stable Diffusion architecture)",
+          "Consistency Models"
+        ],
+        "resources": [
+          {
+            "id": "gen-stanford-cs236",
+            "name": "Deep Generative Models — Stanford CS236",
+            "instructor": "Prof. Stefano Ermon",
+            "university": "Stanford",
+            "url": "https://deepgenerativemodels.github.io/",
+            "type": "Full University Course",
+            "isFree": true,
+            "rating": 5,
+            "description": "The best course on generative models. Covers VAEs, GANs, Flows, Diffusion, and Energy-Based Models with rigorous math.",
+            "tags": [
+              "Stanford",
+              "generative",
+              "VAE",
+              "GAN",
+              "diffusion",
+              "must-do"
+            ]
+          },
+          {
+            "id": "gen-lilian-weng",
+            "name": "Lilian Weng's Blog (OpenAI)",
+            "instructor": "Lilian Weng (VP Research, OpenAI)",
+            "university": "OpenAI",
+            "url": "https://lilianweng.github.io/",
+            "type": "Research Blog",
+            "isFree": true,
+            "rating": 5,
+            "description": "The best technical blog in AI. Every post is a mini-textbook on a key topic: diffusion models, attention, contrastive learning, RLHF, and more. Essential reading.",
+            "tags": [
+              "OpenAI",
+              "research",
+              "blog",
+              "must-bookmark",
+              "Lilian Weng"
+            ]
+          },
+          {
+            "id": "gen-hf-diffusion",
+            "name": "Hugging Face Diffusion Models Course",
+            "instructor": "Hugging Face Team",
+            "university": "Hugging Face",
+            "url": "https://huggingface.co/learn/diffusion-course",
+            "type": "Interactive Course",
+            "isFree": true,
+            "rating": 5,
+            "description": "Build diffusion models from scratch with Diffusers library. Covers DDPM, Stable Diffusion, fine-tuning, and custom pipelines. Best free diffusion course available.",
+            "tags": [
+              "HuggingFace",
+              "diffusion",
+              "Stable-Diffusion",
+              "practical",
+              "must-do"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arch-gnns",
+        "groupTitle": "Graph Neural Networks (GNNs)",
+        "description": "For non-Euclidean data: molecules, social networks, code, 3D structures.",
+        "icon": "🕸️",
+        "architectures": [
+          "Graph Convolutional Networks (GCN)",
+          "GraphSAGE",
+          "Graph Attention Networks (GAT)",
+          "Message Passing Neural Networks (MPNN)",
+          "Graph Transformers"
+        ],
+        "resources": [
+          {
+            "id": "gnn-stanford-cs224w",
+            "name": "Machine Learning with Graphs — Stanford CS224W",
+            "instructor": "Prof. Jure Leskovec",
+            "university": "Stanford",
+            "url": "http://web.stanford.edu/class/cs224w/",
+            "type": "Full University Course",
+            "isFree": true,
+            "rating": 5,
+            "description": "The definitive GNN course. Full lectures on YouTube. Leskovec is the leading graph ML researcher.",
+            "tags": [
+              "Stanford",
+              "GNN",
+              "graphs",
+              "Leskovec"
+            ]
+          },
+          {
+            "id": "gnn-pyg",
+            "name": "PyTorch Geometric (PyG) Tutorials",
+            "instructor": "PyG Team",
+            "university": "Open Source",
+            "url": "https://pytorch-geometric.readthedocs.io/en/latest/get_started/introduction.html",
+            "type": "Library Tutorials",
+            "isFree": true,
+            "rating": 5,
+            "description": "The standard library for GNNs in PyTorch. Tutorials cover GCN, GAT, GraphSAGE, and large-scale graph training. Must-use after CS224W.",
+            "tags": [
+              "PyTorch",
+              "GNN",
+              "library",
+              "practical",
+              "must-do"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arch-ssm",
+        "groupTitle": "State Space Models (SSMs) & Mamba",
+        "description": "The new frontier — linear-time sequence models challenging transformers.",
+        "icon": "🌊",
+        "architectures": [
+          "S4 — Structured State Space Sequence Models",
+          "H3 Architecture",
+          "Mamba (Selective State Spaces)",
+          "Mamba-2",
+          "Jamba (SSM + Transformer hybrid)"
+        ],
+        "resources": [
+          {
+            "id": "ssm-paper-s4",
+            "name": "Efficiently Modeling Long Sequences with Structured State Spaces (S4 Paper)",
+            "instructor": "Gu et al., Stanford",
+            "university": "Stanford",
+            "url": "https://arxiv.org/abs/2111.00396",
+            "type": "Research Paper",
+            "isFree": true,
+            "rating": 5,
+            "description": "The foundational SSM paper. Read after understanding RNNs and convolutions.",
+            "tags": [
+              "paper",
+              "SSM",
+              "S4",
+              "research"
+            ]
+          },
+          {
+            "id": "ssm-mamba-paper",
+            "name": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+            "instructor": "Gu & Dao",
+            "university": "CMU / Princeton",
+            "url": "https://arxiv.org/abs/2312.00752",
+            "type": "Research Paper",
+            "isFree": true,
+            "rating": 5,
+            "description": "The Mamba paper. Introduces selective SSMs. Implement alongside reading.",
+            "tags": [
+              "paper",
+              "Mamba",
+              "SSM",
+              "research",
+              "trending"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arch-rl",
+        "groupTitle": "Reinforcement Learning",
+        "description": "Training agents, RLHF for LLMs, game-playing AI, robotics control.",
+        "icon": "🎮",
+        "architectures": [
+          "Q-Learning & DQN",
+          "Policy Gradient (REINFORCE)",
+          "Actor-Critic methods (A2C, A3C)",
+          "Proximal Policy Optimization (PPO)",
+          "Soft Actor-Critic (SAC)",
+          "RLHF — Reinforcement Learning from Human Feedback",
+          "Model-Based RL"
+        ],
+        "resources": [
+          {
+            "id": "rl-ucl-silver",
+            "name": "Reinforcement Learning — UCL / DeepMind",
+            "instructor": "Prof. David Silver (AlphaGo lead)",
+            "university": "University College London / DeepMind",
+            "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ",
+            "type": "Full University Course",
+            "isFree": true,
+            "rating": 5,
+            "description": "The best RL course. Taught by the researcher who built AlphaGo and AlphaZero. 10 lectures. Rigorous and complete.",
+            "tags": [
+              "UCL",
+              "DeepMind",
+              "David Silver",
+              "AlphaGo",
+              "must-do"
+            ]
+          },
+          {
+            "id": "rl-sutton-barto",
+            "name": "Reinforcement Learning: An Introduction (Sutton & Barto)",
+            "instructor": "Richard Sutton & Andrew Barto",
+            "university": "University of Alberta",
+            "url": "http://incompleteideas.net/book/the-book-2nd.html",
+            "type": "Free Textbook (PDF)",
+            "isFree": true,
+            "rating": 5,
+            "description": "The RL bible. Free PDF online. Covers MDPs, Q-learning, policy gradients, function approximation — everything.",
+            "tags": [
+              "textbook",
+              "bible",
+              "free-PDF",
+              "Sutton-Barto"
+            ]
+          },
+          {
+            "id": "rl-spinup",
+            "name": "Spinning Up in Deep RL (OpenAI)",
+            "instructor": "OpenAI",
+            "university": "OpenAI",
+            "url": "https://spinningup.openai.com/",
+            "type": "Practical Guide + Implementations",
+            "isFree": true,
+            "rating": 5,
+            "description": "OpenAI's guide to deep RL with clean implementations of PPO, SAC, DDPG, TD3. The practical complement to David Silver's theory.",
+            "tags": [
+              "OpenAI",
+              "practical",
+              "implementations",
+              "PPO",
+              "SAC"
+            ]
+          },
+          {
+            "id": "rl-huggingface-rl",
+            "name": "Deep Reinforcement Learning Course (Hugging Face)",
+            "instructor": "Hugging Face Team",
+            "university": "Hugging Face",
+            "url": "https://huggingface.co/learn/deep-rl-course",
+            "type": "Interactive Course",
+            "isFree": true,
+            "rating": 5,
+            "description": "Learn RL by training agents in Unity and PyBullet. Covers Q-Learning, Policy Gradient, PPO, and RLHF for LLMs. Very hands-on with leaderboards.",
+            "tags": [
+              "HuggingFace",
+              "hands-on",
+              "PPO",
+              "RLHF",
+              "Unity",
+              "must-do"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arch-llm-engineering",
+        "groupTitle": "LLM Engineering & Alignment",
+        "description": "Training, fine-tuning, aligning, and deploying large language models. RLHF, instruction tuning, parameter-efficient methods, and inference optimization.",
+        "icon": "💬",
+        "architectures": [
+          "Instruction Tuning & Supervised Fine-Tuning (SFT)",
+          "RLHF — Reinforcement Learning from Human Feedback",
+          "DPO & ORPO — Direct Preference Optimization",
+          "LoRA & QLoRA — Parameter-Efficient Fine-Tuning",
+          "Quantization: GPTQ, AWQ, BitsAndBytes",
+          "KV-Cache Optimization & Flash Decoding",
+          "Tool Use & Agent Architectures",
+          "Multimodal LLMs (LLaVA, CLIP alignment)"
+        ],
+        "resources": [
+          {
+            "id": "llm-hf-alignment",
+            "name": "The Alignment Handbook (Hugging Face)",
+            "instructor": "Hugging Face Team",
+            "university": "Hugging Face",
+            "url": "https://github.com/huggingface/alignment-handbook",
+            "type": "Open Source Recipes + Docs",
+            "isFree": true,
+            "rating": 5,
+            "description": "End-to-end recipes for aligning LLMs. Covers SFT, DPO, ORPO with code. The best free resource for practical RLHF beyond theory.",
+            "tags": [
+              "HuggingFace",
+              "RLHF",
+              "DPO",
+              "recipes",
+              "practical",
+              "must-do"
+            ]
+          },
+          {
+            "id": "llm-rlhf-anthropic",
+            "name": "Constitutional AI & RLHF — Anthropic Research",
+            "instructor": "Anthropic",
+            "university": "Anthropic",
+            "url": "https://www.anthropic.com/research",
+            "type": "Research Papers + Blog Posts",
+            "isFree": true,
+            "rating": 5,
+            "description": "Anthropic publishes extensively on RLHF, Constitutional AI, and alignment. Their research blog and papers are essential for understanding modern LLM training.",
+            "tags": [
+              "Anthropic",
+              "RLHF",
+              "Constitutional-AI",
+              "research",
+              "alignment"
+            ]
+          },
+          {
+            "id": "llm-sebastian-raschka",
+            "name": "Build a Large Language Model From Scratch (Code)",
+            "instructor": "Sebastian Raschka",
+            "university": "Independent",
+            "url": "https://github.com/rasbt/LLMs-from-scratch",
+            "type": "Code Repository + Explanations",
+            "isFree": true,
+            "rating": 5,
+            "description": "Complete open-source companion code to Raschka's book. Build GPT from scratch, pretrain, fine-tune, and implement RLHF. All code is free even without the book.",
+            "tags": [
+              "Raschka",
+              "GPT",
+              "from-scratch",
+              "pretraining",
+              "RLHF",
+              "must-do"
+            ]
+          },
+          {
+            "id": "llm-phantom-pipeline",
+            "name": "LLM Training Pipeline Guide (Hugging Face Examples)",
+            "instructor": "Various (Open Source Community)",
+            "university": "Open Source",
+            "url": "https://github.com/huggingface/transformers/tree/main/examples/pytorch/language-modeling",
+            "type": "Official Examples",
+            "isFree": true,
+            "rating": 4,
+            "description": "Hugging Face official examples for pretraining and fine-tuning language models. The ground truth for implementation details.",
+            "tags": [
+              "HuggingFace",
+              "pretraining",
+              "fine-tuning",
+              "examples"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arch-efficient",
+        "groupTitle": "Efficient AI & Model Optimization",
+        "description": "Making models faster, smaller, and cheaper without sacrificing accuracy. Critical for deploying AI and running experiments on limited hardware.",
+        "icon": "⚡",
+        "architectures": [
+          "Knowledge Distillation",
+          "Pruning: Structured & Unstructured",
+          "Quantization: Post-Training & QAT",
+          "LoRA / QLoRA / DoRA",
+          "Mixture of Experts (MoE) — Sparse architectures",
+          "Speculative Decoding",
+          "Neural Architecture Search (NAS)"
+        ],
+        "resources": [
+          {
+            "id": "efficient-lora-paper",
+            "name": "LoRA: Low-Rank Adaptation of Large Language Models",
+            "instructor": "Hu et al., Microsoft",
+            "university": "Microsoft",
+            "url": "https://arxiv.org/abs/2106.09685",
+            "type": "Research Paper",
+            "isFree": true,
+            "rating": 5,
+            "description": "The paper that made fine-tuning 7B+ parameter models accessible to everyone. Read and implement this to understand parameter-efficient fine-tuning.",
+            "tags": [
+              "paper",
+              "LoRA",
+              "fine-tuning",
+              "efficient",
+              "must-read"
+            ]
+          },
+          {
+            "id": "efficient-hf-peft",
+            "name": "PEFT — Parameter-Efficient Fine-Tuning (Hugging Face)",
+            "instructor": "Hugging Face Team",
+            "university": "Hugging Face",
+            "url": "https://huggingface.co/docs/peft/index",
+            "type": "Library Documentation + Tutorials",
+            "isFree": true,
+            "rating": 5,
+            "description": "Official docs for LoRA, QLoRA, Prefix Tuning, and more. Includes Colab notebooks. The practical standard for efficient fine-tuning.",
+            "tags": [
+              "HuggingFace",
+              "LoRA",
+              "QLoRA",
+              "practical",
+              "must-do"
+            ]
+          },
+          {
+            "id": "efficient-tinyml",
+            "name": "TinyML — Harvard / edX (Audit Free)",
+            "instructor": "Prof. Vijay Janapa Reddi",
+            "university": "Harvard",
+            "platform": "edX (Audit Free)",
+            "type": "University Course",
+            "format": "Video + Labs",
+            "url": "https://www.edx.org/learn/machine-learning/harvard-university-tiny-machine-learning",
+            "isFree": true,
+            "auditNote": "Audit for free — full video and lab access",
+            "rating": 4,
+            "description": "Deploy ML on microcontrollers. Covers quantization, pruning, and embedded deployment. Unique perspective on efficiency at the extreme edge.",
+            "tags": [
+              "Harvard",
+              "edge",
+              "quantization",
+              "deployment",
+              "embedded"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "freeBooksAndPapers": {
+    "sectionTitle": "Free Books & Essential Papers",
+    "sectionSubtitle": "University-grade textbooks available for free — and the papers that changed AI",
+    "books": [
+      {
+        "id": "book-dlbook",
+        "title": "Deep Learning",
+        "authors": [
+          "Ian Goodfellow",
+          "Yoshua Bengio",
+          "Aaron Courville"
+        ],
+        "university": "MIT Press",
+        "url": "https://www.deeplearningbook.org/",
+        "isFree": true,
+        "description": "The DL bible. Part 1 covers all the math you need. Part 2 covers modern DL. Part 3 covers research frontiers.",
+        "coverTopics": [
+          "Linear Algebra",
+          "Probability",
+          "Optimization",
+          "DNNs",
+          "CNNs",
+          "RNNs",
+          "Autoencoders",
+          "Generative Models"
+        ],
+        "tags": [
+          "bible",
+          "Goodfellow",
+          "Bengio",
+          "free-online"
+        ]
+      },
+      {
+        "id": "book-pml1",
+        "title": "Probabilistic Machine Learning: An Introduction",
+        "authors": [
+          "Kevin Murphy"
+        ],
+        "university": "MIT Press",
+        "url": "https://probml.github.io/pml-book/book1.html",
+        "isFree": true,
+        "description": "Modern, Bayesian-first ML textbook. Free PDF. Excellent companion to CS229.",
+        "tags": [
+          "Bayesian",
+          "probabilistic",
+          "Murphy",
+          "free-PDF"
+        ]
+      },
+      {
+        "id": "book-pml2",
+        "title": "Probabilistic Machine Learning: Advanced Topics",
+        "authors": [
+          "Kevin Murphy"
+        ],
+        "university": "MIT Press",
+        "url": "https://probml.github.io/pml-book/book2.html",
+        "isFree": true,
+        "description": "Research-level. Covers diffusion models, flows, GNNs, causality. The most up-to-date free ML book.",
+        "tags": [
+          "research-level",
+          "diffusion",
+          "GNN",
+          "causality",
+          "free-PDF"
+        ]
+      },
+      {
+        "id": "book-uml",
+        "title": "Understanding Machine Learning: From Theory to Algorithms",
+        "authors": [
+          "Shai Shalev-Shwartz",
+          "Shai Ben-David"
+        ],
+        "university": "Cambridge University Press",
+        "url": "https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf",
+        "isFree": true,
+        "description": "Theory-first ML. PAC learning, VC dimension, generalization bounds. For those who want to understand why algorithms work.",
+        "tags": [
+          "theory",
+          "PAC-learning",
+          "VC-dimension",
+          "free-PDF"
+        ]
+      },
+      {
+        "id": "book-mathematics4ml",
+        "title": "Mathematics for Machine Learning",
+        "authors": [
+          "Marc Deisenroth",
+          "A. Aldo Faisal",
+          "Cheng Soon Ong"
+        ],
+        "university": "Cambridge University Press",
+        "url": "https://mml-book.github.io/",
+        "isFree": true,
+        "description": "Bridges math and ML explicitly. Covers linear algebra, calculus, probability through the lens of ML algorithms.",
+        "tags": [
+          "math",
+          "bridge",
+          "Imperial",
+          "Cambridge",
+          "free-PDF"
+        ]
+      },
+      {
+        "id": "book-d2l",
+        "title": "Dive into Deep Learning",
+        "authors": [
+          "Aston Zhang",
+          "Zachary C. Lipton",
+          "Mu Li",
+          "Alexander J. Smola"
+        ],
+        "university": "Amazon / Multiple Universities",
+        "url": "https://d2l.ai/",
+        "isFree": true,
+        "description": "Interactive textbook with runnable code for every section. Covers the entire DL pipeline from linear regression to transformers. Constantly updated.",
+        "coverTopics": [
+          "Linear Neural Networks",
+          "CNNs",
+          "RNNs",
+          "Attention",
+          "Transformers",
+          "Optimization",
+          "CV",
+          "NLP"
+        ],
+        "tags": [
+          "interactive",
+          "code-first",
+          "complete-curriculum",
+          "free-online"
+        ]
+      },
+      {
+        "id": "book-udl",
+        "title": "Understanding Deep Learning",
+        "authors": [
+          "Simon J.D. Prince"
+        ],
+        "university": "Boston University",
+        "url": "https://udlbook.github.io/",
+        "isFree": true,
+        "description": "The most up-to-date deep learning textbook (2023). Beautiful explanations of modern architectures, transformers, diffusion models, and GNNs. Free PDF.",
+        "coverTopics": [
+          "Deep Neural Networks",
+          "CNNs",
+          "Transformers",
+          "Diffusion Models",
+          "GNNs",
+          "Autoencoders",
+          "RL",
+          "Generative Models"
+        ],
+        "tags": [
+          "modern",
+          "2023",
+          "visual",
+          "free-PDF",
+          "must-read"
+        ]
+      },
+      {
+        "id": "book-nielsen",
+        "title": "Neural Networks and Deep Learning",
+        "authors": [
+          "Michael Nielsen"
+        ],
+        "university": "Independent",
+        "url": "http://neuralnetworksanddeeplearning.com/",
+        "isFree": true,
+        "description": "A gentle, intuition-first introduction. Nielsen explains backpropagation better than almost anyone. Free web book with interactive elements.",
+        "coverTopics": [
+          "NN Basics",
+          "Backpropagation",
+          "MNIST from scratch",
+          "Deep Learning",
+          "CNNs intro",
+          "Vanishing Gradients"
+        ],
+        "tags": [
+          "intuition",
+          "beginner-friendly",
+          "free-online",
+          "classic"
+        ]
+      },
+      {
+        "id": "book-isl",
+        "title": "An Introduction to Statistical Learning",
+        "authors": [
+          "Gareth James",
+          "Daniela Witten",
+          "Trevor Hastie",
+          "Robert Tibshirani"
+        ],
+        "university": "Stanford / USC / University of Washington",
+        "url": "https://www.statlearning.com/",
+        "isFree": true,
+        "description": "ISL is the standard first textbook for statistical ML. Free PDF and Python labs. Covers regression, classification, resampling, trees, SVMs, and unsupervised learning.",
+        "coverTopics": [
+          "Linear Regression",
+          "Classification",
+          "Resampling",
+          "Linear Model Selection",
+          "Trees",
+          "SVM",
+          "Unsupervised Learning"
+        ],
+        "tags": [
+          "bible",
+          "free-PDF",
+          "beginner-friendly",
+          "practical",
+          "must-read"
+        ]
+      },
+      {
+        "id": "book-ml-book",
+        "title": "The Hundred-Page Machine Learning Book",
+        "authors": [
+          "Andriy Burkov"
+        ],
+        "university": "Independent",
+        "url": "http://themlbook.com/wiki/doku.php",
+        "isFree": true,
+        "description": "A concise, no-fluff overview of all major ML concepts. The first 100 pages are free on the author's website. Excellent for quick review or first pass.",
+        "coverTopics": [
+          "Supervised Learning",
+          "Unsupervised Learning",
+          "Neural Networks",
+          "Optimization",
+          "Practice Tips"
+        ],
+        "tags": [
+          "concise",
+          "quick-read",
+          "free-online",
+          "overview"
+        ]
+      },
+      {
+        "id": "book-mackay",
+        "title": "Information Theory, Inference, and Learning Algorithms",
+        "authors": [
+          "David J.C. MacKay"
+        ],
+        "university": "University of Cambridge",
+        "url": "https://www.inference.org.uk/itprnn/book.html",
+        "isFree": true,
+        "description": "Connects information theory, probability, and neural networks. Free from Cambridge University Press. A deep, unified view of learning.",
+        "coverTopics": [
+          "Entropy",
+          "Coding",
+          "Monte Carlo Methods",
+          "Neural Networks",
+          "Bayesian Inference",
+          "Message Passing"
+        ],
+        "tags": [
+          "Cambridge",
+          "unified",
+          "free-PDF",
+          "bible",
+          "information-theory"
+        ]
+      }
+    ],
+    "seminalPapers": [
+      {
+        "id": "paper-attention",
+        "title": "Attention Is All You Need",
+        "authors": [
+          "Vaswani et al."
+        ],
+        "year": 2017,
+        "url": "https://arxiv.org/abs/1706.03762",
+        "significance": "Introduced the Transformer — the architecture behind GPT, BERT, and essentially all modern AI",
+        "mustRead": true
+      },
+      {
+        "id": "paper-resnet",
+        "title": "Deep Residual Learning for Image Recognition",
+        "authors": [
+          "He et al."
+        ],
+        "year": 2015,
+        "url": "https://arxiv.org/abs/1512.03385",
+        "significance": "Skip connections that enabled training of 100+ layer networks. ResNets are still everywhere.",
+        "mustRead": true
+      },
+      {
+        "id": "paper-batch-norm",
+        "title": "Batch Normalization",
+        "authors": [
+          "Ioffe, Szegedy"
+        ],
+        "year": 2015,
+        "url": "https://arxiv.org/abs/1502.03167",
+        "significance": "Enabled training of very deep networks by normalizing activations",
+        "mustRead": true
+      },
+      {
+        "id": "paper-gpt3",
+        "title": "Language Models are Few-Shot Learners (GPT-3)",
+        "authors": [
+          "Brown et al., OpenAI"
+        ],
+        "year": 2020,
+        "url": "https://arxiv.org/abs/2005.14165",
+        "significance": "Showed that scale + pretraining enables emergent few-shot capabilities",
+        "mustRead": true
+      },
+      {
+        "id": "paper-ddpm",
+        "title": "Denoising Diffusion Probabilistic Models",
+        "authors": [
+          "Ho et al., UC Berkeley"
+        ],
+        "year": 2020,
+        "url": "https://arxiv.org/abs/2006.11239",
+        "significance": "Foundational paper for all modern image/video generation models",
+        "mustRead": true
+      },
+      {
+        "id": "paper-alphago",
+        "title": "Mastering the Game of Go with Deep Neural Networks and Tree Search",
+        "authors": [
+          "Silver et al., DeepMind"
+        ],
+        "year": 2016,
+        "url": "https://www.nature.com/articles/nature16961",
+        "significance": "AlphaGo paper — breakthrough in RL + deep learning",
+        "mustRead": true
+      },
+      {
+        "id": "paper-vae",
+        "title": "Auto-Encoding Variational Bayes",
+        "authors": [
+          "Kingma, Welling"
+        ],
+        "year": 2013,
+        "url": "https://arxiv.org/abs/1312.6114",
+        "significance": "Introduced VAEs — foundational for generative AI",
+        "mustRead": true
+      },
+      {
+        "id": "paper-scaling-laws",
+        "title": "Scaling Laws for Neural Language Models",
+        "authors": [
+          "Kaplan et al., OpenAI"
+        ],
+        "year": 2020,
+        "url": "https://arxiv.org/abs/2001.08361",
+        "significance": "Revealed the power-law relationship between model size, data, compute and loss",
+        "mustRead": true
+      },
+      {
+        "id": "paper-lora",
+        "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+        "authors": [
+          "Hu et al., Microsoft"
+        ],
+        "year": 2021,
+        "url": "https://arxiv.org/abs/2106.09685",
+        "significance": "Made fine-tuning multi-billion parameter models accessible on consumer GPUs. The foundation of modern efficient LLM adaptation.",
+        "mustRead": true
+      },
+      {
+        "id": "paper-rlhf",
+        "title": "Training language models to follow instructions with human feedback",
+        "authors": [
+          "Ouyang et al., OpenAI"
+        ],
+        "year": 2022,
+        "url": "https://arxiv.org/abs/2203.02155",
+        "significance": "InstructGPT / RLHF paper. Established the standard pipeline for aligning LLMs with human preferences.",
+        "mustRead": true
+      },
+      {
+        "id": "paper-clip",
+        "title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)",
+        "authors": [
+          "Radford et al., OpenAI"
+        ],
+        "year": 2021,
+        "url": "https://arxiv.org/abs/2103.00020",
+        "significance": "Pioneered multimodal learning by training on image-text pairs. Foundation for modern vision-language models and zero-shot classification.",
+        "mustRead": true
+      },
+      {
+        "id": "paper-llama",
+        "title": "LLaMA: Open and Efficient Foundation Language Models",
+        "authors": [
+          "Touvron et al., Meta"
+        ],
+        "year": 2023,
+        "url": "https://arxiv.org/abs/2302.13971",
+        "significance": "Open-sourced performant foundation models, triggering the open LLM revolution and enabling research outside big tech.",
+        "mustRead": true
+      },
+      {
+        "id": "paper-chinchilla",
+        "title": "Training Compute-Optimal Large Language Models (Chinchilla)",
+        "authors": [
+          "Hoffmann et al., DeepMind"
+        ],
+        "year": 2022,
+        "url": "https://arxiv.org/abs/2203.15556",
+        "significance": "Revised scaling laws: model size and training data must scale equally. Changed how the industry trains LLMs.",
+        "mustRead": true
+      }
+    ]
+  },
+  "practiceAndProjects": {
+    "sectionTitle": "Practice Platforms & Project Ideas",
+    "sectionSubtitle": "Build real things. Implement papers. Win competitions.",
+    "platforms": [
+      {
+        "id": "platform-kaggle",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com/",
+        "type": "Competitions + Notebooks + Datasets",
+        "isFree": true,
+        "description": "The best platform to practice ML. Free GPU/TPU notebooks. Competitions with real data. Learn from top solutions.",
+        "bestFor": [
+          "Practice",
+          "Real datasets",
+          "Community learning",
+          "Portfolio building"
+        ]
+      },
+      {
+        "id": "platform-paperswithcode",
+        "name": "Papers With Code",
+        "url": "https://paperswithcode.com/",
+        "type": "Paper + Implementation Repository",
+        "isFree": true,
+        "description": "Every major AI paper with linked open-source implementations. Browse state-of-the-art benchmarks and find papers to implement.",
+        "bestFor": [
+          "Finding papers to implement",
+          "SOTA tracking",
+          "Benchmark comparison"
+        ]
+      },
+      {
+        "id": "platform-huggingface",
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/",
+        "type": "Models + Datasets + Spaces",
+        "isFree": true,
+        "description": "The GitHub of ML. Free model hub, datasets, Spaces to deploy models. HF Transformers library is the standard.",
+        "bestFor": [
+          "Pretrained models",
+          "Fine-tuning",
+          "Deployment",
+          "Open-source models"
+        ]
+      },
+      {
+        "id": "platform-colab",
+        "name": "Google Colab",
+        "url": "https://colab.research.google.com/",
+        "type": "Free GPU/TPU Notebooks",
+        "isFree": true,
+        "description": "Free T4 GPU access. Run all your DL experiments here. Upgrade to Colab Pro for better GPUs when needed.",
+        "bestFor": [
+          "Free GPU",
+          "Experiments",
+          "Sharing notebooks"
+        ]
+      },
+      {
+        "id": "platform-arxiv",
+        "name": "arXiv",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "type": "Research Paper Repository",
+        "isFree": true,
+        "description": "Where all AI research is published first. Follow cs.LG (ML) and cs.AI daily.",
+        "bestFor": [
+          "Research papers",
+          "Staying current",
+          "Finding ideas"
+        ]
+      },
+      {
+        "id": "platform-madewithml",
+        "name": "Made With ML",
+        "url": "https://madewithml.com/",
+        "type": "Free MLOps Course + Community",
+        "isFree": true,
+        "description": "Goku Mohandas' legendary free course. Covers the full ML lifecycle: data, training, evaluation, deployment, and monitoring. MLOps for practitioners.",
+        "bestFor": [
+          "MLOps",
+          "End-to-end projects",
+          "Deployment",
+          "Best practices"
+        ]
+      },
+      {
+        "id": "platform-fsdl",
+        "name": "Full Stack Deep Learning",
+        "url": "https://fullstackdeeplearning.com/",
+        "type": "Free Course",
+        "isFree": true,
+        "description": "Learn to ship AI projects. Covers data management, experimentation, deployment, and LLM apps. The bridge between research prototypes and production.",
+        "bestFor": [
+          "Deployment",
+          "MLOps",
+          "LLM apps",
+          "Production",
+          "Portfolio"
+        ]
+      },
+      {
+        "id": "platform-leetcode",
+        "name": "LeetCode (Free Tier)",
+        "url": "https://leetcode.com/",
+        "type": "Coding Practice",
+        "isFree": true,
+        "description": "Essential for Python fluency and algorithmic thinking. Do the 'Easy' and 'Medium' arrays/strings problems. Free tier is sufficient.",
+        "bestFor": [
+          "Coding interviews",
+          "Python fluency",
+          "Algorithmic thinking"
+        ]
+      }
+    ],
+    "projectMilestones": [
+      {
+        "milestone": 1,
+        "title": "Implement Linear Regression from scratch",
+        "description": "Gradient descent, closed-form solution, vectorized NumPy. No sklearn allowed.",
+        "skills": [
+          "NumPy",
+          "Calculus",
+          "Linear Algebra"
+        ],
+        "difficulty": "beginner"
+      },
+      {
+        "milestone": 2,
+        "title": "Build a Neural Network from scratch (NumPy only)",
+        "description": "Forward pass, backprop, mini-batch SGD, train on MNIST. Achieve 98%+ accuracy.",
+        "skills": [
+          "Backpropagation",
+          "NumPy",
+          "Linear Algebra"
+        ],
+        "difficulty": "intermediate"
+      },
+      {
+        "milestone": 3,
+        "title": "Train a CNN on CIFAR-10 in PyTorch",
+        "description": "Build custom CNN, implement data augmentation, achieve 85%+ accuracy.",
+        "skills": [
+          "PyTorch",
+          "CNNs",
+          "Data augmentation"
+        ],
+        "difficulty": "intermediate"
+      },
+      {
+        "milestone": 4,
+        "title": "Build a Transformer from scratch",
+        "description": "Implement multi-head attention, positional encoding, train a character-level LM. Follow Karpathy's lecture.",
+        "skills": [
+          "Transformers",
+          "Attention",
+          "PyTorch"
+        ],
+        "difficulty": "advanced"
+      },
+      {
+        "milestone": 5,
+        "title": "Reproduce a published paper",
+        "description": "Pick a paper from Papers With Code, implement it from scratch, verify results. Best learning experience in AI.",
+        "skills": [
+          "Research reading",
+          "PyTorch",
+          "Debugging"
+        ],
+        "difficulty": "advanced"
+      },
+      {
+        "milestone": 6,
+        "title": "Train a small GPT on custom data",
+        "description": "Collect your own dataset, train a 10M parameter GPT, deploy on Hugging Face Spaces.",
+        "skills": [
+          "LLMs",
+          "Data pipelines",
+          "Deployment"
+        ],
+        "difficulty": "expert"
+      },
+      {
+        "milestone": 3,
+        "title": "Implement Logistic Regression & Decision Tree from scratch",
+        "description": "Build logistic regression with gradient ascent and a CART decision tree with entropy/gini. Compare your implementation to sklearn.",
+        "skills": [
+          "Classification",
+          "Information Theory",
+          "NumPy",
+          "Tree algorithms"
+        ],
+        "difficulty": "intermediate"
+      },
+      {
+        "milestone": 5,
+        "title": "Build an LSTM for character-level text generation",
+        "description": "Implement a recurrent network (LSTM/GRU) in PyTorch. Train on a book corpus and generate text. Understand vanishing gradients firsthand.",
+        "skills": [
+          "RNNs",
+          "LSTMs",
+          "PyTorch",
+          "Text processing"
+        ],
+        "difficulty": "advanced"
+      },
+      {
+        "milestone": 7,
+        "title": "Fine-tune BERT for a Named Entity Recognition task",
+        "description": "Use Hugging Face Transformers to fine-tune a pretrained model. Learn tokenization, datasets, Trainer API, and evaluation metrics.",
+        "skills": [
+          "Transformers",
+          "HuggingFace",
+          "Fine-tuning",
+          "NLP pipelines"
+        ],
+        "difficulty": "advanced"
+      },
+      {
+        "milestone": 8,
+        "title": "Implement LoRA fine-tuning on a small LLM",
+        "description": "Take a 1B parameter model, freeze it, and fine-tune with LoRA using PEFT. Understand parameter-efficient adaptation and memory profiling.",
+        "skills": [
+          "LoRA",
+          "PEFT",
+          "Memory optimization",
+          "Fine-tuning"
+        ],
+        "difficulty": "expert"
+      },
+      {
+        "milestone": 9,
+        "title": "Train a Diffusion Model on a custom image dataset",
+        "description": "Implement or adapt a DDPM. Train on a small dataset (e.g., Pokemon, anime faces). Understand forward/reverse processes and sampling.",
+        "skills": [
+          "Diffusion",
+          "DDPM",
+          "Image generation",
+          "PyTorch"
+        ],
+        "difficulty": "expert"
+      },
+      {
+        "milestone": 10,
+        "title": "Deploy a model with a FastAPI backend and Gradio frontend",
+        "description": "Build an end-to-end ML application. Dockerize it, deploy on Hugging Face Spaces or a free tier cloud provider. Add monitoring.",
+        "skills": [
+          "Deployment",
+          "FastAPI",
+          "Docker",
+          "MLOps",
+          "API design"
+        ],
+        "difficulty": "expert"
+      }
+    ]
+  },
+  "communityAndBlogs": {
+    "sectionTitle": "Communities, Blogs & Research Groups",
+    "sectionSubtitle": "Stay current. Learn from researchers. Engage with the community.",
+    "blogs": [
+      {
+        "id": "blog-colah",
+        "name": "colah's blog",
+        "author": "Chris Olah (Google Brain / Anthropic)",
+        "url": "https://colah.github.io/",
+        "description": "The most beautifully written ML intuition blog. Posts on LSTMs, neural network features, attention, and information theory are essential reading."
+      },
+      {
+        "id": "blog-lilian",
+        "name": "Lilian Weng's Blog",
+        "author": "Lilian Weng (OpenAI VP Research)",
+        "url": "https://lilianweng.github.io/",
+        "description": "Research-grade explanations of diffusion models, attention, contrastive learning, RLHF. Each post is a mini-survey."
+      },
+      {
+        "id": "blog-distill",
+        "name": "Distill.pub",
+        "author": "Multiple ML Researchers",
+        "url": "https://distill.pub/",
+        "description": "Interactive, peer-reviewed ML articles. The highest quality ML writing on the internet. Covers mechanistic interpretability, attention, and more."
+      },
+      {
+        "id": "blog-andrej",
+        "name": "Andrej Karpathy's Blog & Twitter/X",
+        "author": "Andrej Karpathy",
+        "url": "https://karpathy.github.io/",
+        "description": "Deep practical insights from one of the world's best ML practitioners. 'A Recipe for Training Neural Networks' is essential reading."
+      },
+      {
+        "id": "blog-raschka",
+        "name": "Sebastian Raschka's Blog",
+        "author": "Sebastian Raschka",
+        "url": "https://sebastianraschka.com/blog/",
+        "description": "Deep dives on LLMs, LoRA, pretraining, and ML research. Raschka is one of the best educators for translating papers into practice."
+      },
+      {
+        "id": "blog-jay",
+        "name": "Jay Alammar's Blog",
+        "author": "Jay Alammar",
+        "url": "https://jalammar.github.io/",
+        "description": "The best visual explanations of transformers, BERT, GPT, and tokenization. 'The Illustrated Transformer' is a must-read before implementing attention."
+      }
+    ],
+    "youtubeChannels": [
+      {
+        "id": "yt-3b1b",
+        "name": "3Blue1Brown",
+        "url": "https://www.youtube.com/@3blue1brown",
+        "description": "Visual math and ML intuition. Essential for all mathematical foundations."
+      },
+      {
+        "id": "yt-yannic",
+        "name": "Yannic Kilcher",
+        "url": "https://www.youtube.com/@YannicKilcher",
+        "description": "Best paper explanation channel. Watch his breakdowns of transformers, GANs, and new SOTA papers."
+      },
+      {
+        "id": "yt-abi",
+        "name": "Andrej Karpathy",
+        "url": "https://www.youtube.com/@AndrejKarpathy",
+        "description": "Must-subscribe. 'Zero to Hero' series is the best DL curriculum on YouTube."
+      },
+      {
+        "id": "yt-sentdex",
+        "name": "sentdex",
+        "url": "https://www.youtube.com/@sentdex",
+        "description": "Practical Python ML from reinforcement learning to PyTorch projects."
+      },
+      {
+        "id": "yt-lex",
+        "name": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "description": "Long-form interviews with leading AI researchers — Hinton, LeCun, Bengio, Ng, Karpathy. Essential for perspective."
+      },
+      {
+        "id": "yt-statquest",
+        "name": "StatQuest with Josh Starmer",
+        "url": "https://www.youtube.com/@statquest",
+        "description": "Short, crystal-clear explanations of ML and statistics concepts. Perfect for filling gaps before diving into heavy theory."
+      },
+      {
+        "id": "yt-umar",
+        "name": "Umar Jamil",
+        "url": "https://www.youtube.com/@umarjamilai",
+        "description": "Deep technical breakdowns of transformer papers (LLaMA, Mistral, Mixtral) with code walkthroughs. Excellent for advanced architecture study."
+      },
+      {
+        "id": "yt-two-minute",
+        "name": "Two Minute Papers",
+        "url": "https://www.youtube.com/@TwoMinutePapers",
+        "description": "Stay current with AI research. Quick, exciting summaries of the latest papers in graphics, ML, and robotics."
+      }
+    ]
+  },
+  "weeklySchedule": {
+    "sectionTitle": "Suggested Weekly Study Structure",
+    "totalMonths": "18–24 months (full mastery)",
+    "schedule": [
+      {
+        "week": "Weeks 1–4",
+        "focus": "Linear Algebra",
+        "daily": "3Blue1Brown (Essence of LA) → MIT 18.06 lectures → Problem sets",
+        "milestone": "Comfortable with matrix ops, eigenvalues, SVD"
+      },
+      {
+        "week": "Weeks 5–8",
+        "focus": "Calculus",
+        "daily": "3Blue1Brown Calculus → MIT 18.02 → Imperial College Multivariate",
+        "milestone": "Understand gradients, Jacobians, chain rule deeply"
+      },
+      {
+        "week": "Weeks 9–14",
+        "focus": "Probability & Statistics",
+        "daily": "Harvard Stat 110 or MIT 6.041 → CS109 Stanford",
+        "milestone": "Comfortable with distributions, MLE, Bayes theorem, entropy"
+      },
+      {
+        "week": "Weeks 15–16",
+        "focus": "Python Scientific Stack",
+        "daily": "NumPy → Pandas → Matplotlib → CS231n Python tutorial",
+        "milestone": "Vectorized code, broadcasting, data manipulation"
+      },
+      {
+        "week": "Weeks 17–24",
+        "focus": "Classical ML — CS229 Stanford",
+        "daily": "2 lectures/week + implement every algorithm from scratch",
+        "milestone": "Implement linear regression, logistic regression, SVM, trees from scratch"
+      },
+      {
+        "week": "Weeks 25–34",
+        "focus": "Deep Learning — CS231n + Karpathy Zero to Hero",
+        "daily": "CS231n lectures + Karpathy videos + Assignments",
+        "milestone": "Build CNN, RNN, and GPT from scratch in PyTorch"
+      },
+      {
+        "week": "Weeks 35–48",
+        "focus": "Advanced Architectures",
+        "daily": "CS224N (NLP/Transformers) + CS236 (Generative) + Paper implementations",
+        "milestone": "Implement a full transformer, VAE, and diffusion model"
+      },
+      {
+        "week": "Ongoing",
+        "focus": "Research & Projects",
+        "daily": "Read 1 arXiv paper/day → Implement 1 paper/month → Kaggle competitions",
+        "milestone": "Build original contributions, publish, contribute to open source"
+      }
+    ]
+  }
+}
