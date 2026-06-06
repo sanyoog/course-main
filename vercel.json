@@ -3,20 +3,17 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "env": [
-    {
-      "key": "USER_ADMIN_PASSWORD",
+  "env": {
+    "USER_ADMIN_PASSWORD": {
       "description": "Password for admin user (set in Vercel dashboard)"
     },
-    {
-      "key": "KV_REST_API_URL",
+    "KV_REST_API_URL": {
       "description": "Vercel KV Redis URL (optional, will use filesystem if not set)"
     },
-    {
-      "key": "KV_REST_API_TOKEN",
+    "KV_REST_API_TOKEN": {
       "description": "Vercel KV Redis token (optional, will use filesystem if not set)"
     }
-  ],
+  },
   "git": {
     "deploymentEnabled": {
       "main": true
