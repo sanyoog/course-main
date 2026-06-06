@@ -1,0 +1,50 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+README.md
+CONTRIBUTING.md
+LICENSE
+
+# Local env files (Vercel has its own env management)
+.env.local
+.env.*.local
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local data directory (uses KV in production)
+/data/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Build artifacts
+/dist
+/build
+
+# Next.js
+.next/
+out/
+
+# Temporary files
+*.tmp
+.DS_Store
+Thumbs.db

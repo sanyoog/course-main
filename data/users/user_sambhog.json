@@ -1,0 +1,105 @@
+{
+  "userId": "sambhog",
+  "profile": {
+    "displayName": "Sambhog",
+    "email": "",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "lastSeen": "2026-06-06T05:16:14.105Z",
+    "timezone": "UTC"
+  },
+  "progress": {
+    "overallProgress": 0,
+    "totalResources": 0,
+    "completedResources": 0,
+    "totalTimeSpent": 0,
+    "lastActivityDate": "2026-06-06T05:16:14.105Z",
+    "startDate": "2025-01-01T00:00:00.000Z"
+  },
+  "phases": {
+    "phase-1": {
+      "phaseId": "phase-1",
+      "name": "Mathematical Foundations",
+      "status": "in_progress",
+      "progress": 0,
+      "startDate": "2026-06-06T05:15:30.094Z",
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    },
+    "phase-2": {
+      "phaseId": "phase-2",
+      "name": "Python for ML/AI",
+      "status": "not_started",
+      "progress": 0,
+      "startDate": null,
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    },
+    "phase-3": {
+      "phaseId": "phase-3",
+      "name": "Classical Machine Learning",
+      "status": "not_started",
+      "progress": 0,
+      "startDate": null,
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    },
+    "phase-4": {
+      "phaseId": "phase-4",
+      "name": "Deep Learning Fundamentals",
+      "status": "not_started",
+      "progress": 0,
+      "startDate": null,
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    },
+    "phase-5": {
+      "phaseId": "phase-5",
+      "name": "Advanced Architectures",
+      "status": "not_started",
+      "progress": 0,
+      "startDate": null,
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    }
+  },
+  "completedResources": [],
+  "resourceDetails": {},
+  "schedule": {
+    "selectedPhase": "phase-1",
+    "startDate": null,
+    "completedDays": {},
+    "skippedDays": {},
+    "currentWeek": 1,
+    "totalWeeksActive": 0
+  },
+  "statistics": {
+    "streak": {
+      "current": 0,
+      "longest": 0,
+      "lastActivityDate": null
+    },
+    "velocity": {
+      "itemsPerWeek": 0,
+      "itemsPerDay": 0,
+      "averageTimePerResource": 0
+    },
+    "milestones": [],
+    "achievements": []
+  },
+  "preferences": {
+    "dailyGoal": 2,
+    "notifications": true,
+    "theme": "dark",
+    "language": "en"
+  }
+}
