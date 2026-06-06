@@ -114,7 +114,7 @@ export function LoginPage({ onLogin }: Props) {
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
               autoComplete="username"
-              placeholder="e.g. sambhog"
+              placeholder="username"
               style={{
                 width: '100%',
                 background: 'var(--surface)',
