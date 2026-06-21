@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "0 → AI · Learning Tracker",
+  title: "AGI · Learning Tracker",
   description:
     "A curated, structured tracker for building AI models from scratch — math-first, architecture-deep, university-grade.",
   keywords: ["AI", "Machine Learning", "Deep Learning", "Learning Tracker", "Roadmap"],

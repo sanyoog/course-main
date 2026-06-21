@@ -415,7 +415,7 @@ function Sidebar({ activeSection, setActiveSection, sectionProgress, mobileOpen 
           color: 'var(--text-primary)',
           letterSpacing: '-0.02em',
         }}>
-          0 <span style={{ color: 'var(--accent)' }}>→</span> AI
+          0 <span style={{ color: 'var(--accent)' }}>→</span> AGI
         </div>
         <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2, fontFamily: 'var(--font-mono)' }}>
           learning tracker

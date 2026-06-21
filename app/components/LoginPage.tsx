@@ -76,7 +76,7 @@ export function LoginPage({ onLogin }: Props) {
               marginBottom: 6,
             }}
           >
-            0 <span style={{ color: 'var(--accent)' }}>→</span> AI
+            Log <span style={{ color: 'var(--accent)' }}>→</span> In
           </div>
           <div
             style={{
@@ -229,8 +229,8 @@ export function LoginPage({ onLogin }: Props) {
             lineHeight: 1.7,
           }}
         >
-          <div>No registration. Credentials set via .env</div>
-          <div style={{ opacity: 0.6 }}>USER_&#123;ID&#125;_PASSWORD=your_password</div>
+          <div>No registration. Credentials preset to db</div>
+          <div style={{ opacity: 0.6 }}>Please talk to an Admin</div>
         </div>
       </motion.div>
     </div>
