@@ -137,6 +137,12 @@ export interface AppData {
     totalResources: number;
   };
   roadmap: { phases: Phase[] };
+  programmingFundamentals: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    phaseId: string;
+    topics: PythonTopic[];
+  };
   mathematics: {
     sectionTitle: string;
     sectionSubtitle: string;
@@ -167,6 +173,12 @@ export interface AppData {
     phaseId: string;
     architectureGroups: ArchitectureGroup[];
   };
+  researchMethodology: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    phaseId: string;
+    topics: PythonTopic[];
+  };
   freeBooksAndPapers: {
     sectionTitle: string;
     sectionSubtitle: string;
@@ -194,11 +206,13 @@ export interface AppData {
 
 export type NavSection =
   | 'overview'
+  | 'programming'
   | 'math'
   | 'python'
   | 'ml'
   | 'deeplearning'
   | 'architectures'
+  | 'research'
   | 'books'
   | 'schedule'
   | 'mindmap';

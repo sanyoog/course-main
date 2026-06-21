@@ -4,7 +4,7 @@
     "displayName": "Sambhog",
     "email": "",
     "createdAt": "2025-01-01T00:00:00.000Z",
-    "lastSeen": "2026-06-06T05:16:14.105Z",
+    "lastSeen": "2026-06-21T06:04:05.541Z",
     "timezone": "UTC"
   },
   "progress": {
@@ -12,16 +12,27 @@
     "totalResources": 0,
     "completedResources": 0,
     "totalTimeSpent": 0,
-    "lastActivityDate": "2026-06-06T05:16:14.105Z",
+    "lastActivityDate": "2026-06-21T06:04:05.541Z",
     "startDate": "2025-01-01T00:00:00.000Z"
   },
   "phases": {
+    "phase-0": {
+      "phaseId": "phase-0",
+      "name": "Programming Fundamentals",
+      "status": "in_progress",
+      "progress": 0,
+      "startDate": "2026-06-21T06:03:30.118Z",
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    },
     "phase-1": {
       "phaseId": "phase-1",
       "name": "Mathematical Foundations",
-      "status": "in_progress",
+      "status": "not_started",
       "progress": 0,
-      "startDate": "2026-06-06T05:15:30.094Z",
+      "startDate": null,
       "completionDate": null,
       "totalResources": 0,
       "completedResources": 0,
@@ -63,6 +74,17 @@
     "phase-5": {
       "phaseId": "phase-5",
       "name": "Advanced Architectures",
+      "status": "not_started",
+      "progress": 0,
+      "startDate": null,
+      "completionDate": null,
+      "totalResources": 0,
+      "completedResources": 0,
+      "timeSpent": 0
+    },
+    "phase-6": {
+      "phaseId": "phase-6",
+      "name": "Research Methodology & Publishing",
       "status": "not_started",
       "progress": 0,
       "startDate": null,

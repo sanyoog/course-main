@@ -45,6 +45,17 @@ function createDefaultProfile(userId: string) {
       startDate: new Date().toISOString(),
     },
     phases: {
+      'phase-0': {
+        phaseId: 'phase-0',
+        name: 'Programming Fundamentals',
+        status: 'not_started',
+        progress: 0,
+        startDate: null,
+        completionDate: null,
+        totalResources: 0,
+        completedResources: 0,
+        timeSpent: 0,
+      },
       'phase-1': {
         phaseId: 'phase-1',
         name: 'Mathematical Foundations',
@@ -92,6 +103,17 @@ function createDefaultProfile(userId: string) {
       'phase-5': {
         phaseId: 'phase-5',
         name: 'Advanced Architectures',
+        status: 'not_started',
+        progress: 0,
+        startDate: null,
+        completionDate: null,
+        totalResources: 0,
+        completedResources: 0,
+        timeSpent: 0,
+      },
+      'phase-6': {
+        phaseId: 'phase-6',
+        name: 'Research Methodology & Publishing',
         status: 'not_started',
         progress: 0,
         startDate: null,
@@ -301,27 +323,40 @@ function isObject(item: any): boolean {
 // Map completed resources to phases (simplified version)
 function getPhaseResourceMapping(completedResources: string[]): Record<string, number> {
   const phaseMap: Record<string, number> = {
+    'phase-0': 0,
     'phase-1': 0,
     'phase-2': 0,
     'phase-3': 0,
     'phase-4': 0,
     'phase-5': 0,
+    'phase-6': 0,
   };
 
   completedResources.forEach((resourceId) => {
     // Simple heuristic: map based on resource ID prefixes
-    if (resourceId.includes('math') || resourceId.includes('linalg') || resourceId.includes('calc') || 
+    if (resourceId.includes('prog-')) {
+      // Programming fundamentals (phase-0)
+      phaseMap['phase-0']++;
+    } else if (resourceId.includes('math') || resourceId.includes('linalg') || resourceId.includes('calc') || 
         resourceId.includes('prob') || resourceId.includes('opt') || resourceId.includes('info') || 
         resourceId.includes('discrete')) {
+      // Mathematics (phase-1)
       phaseMap['phase-1']++;
     } else if (resourceId.includes('python') || resourceId.includes('numpy') || resourceId.includes('pandas')) {
+      // Python (phase-2)
       phaseMap['phase-2']++;
     } else if (resourceId.includes('ml-') || resourceId.includes('sklearn') || resourceId.includes('regression')) {
+      // Machine Learning (phase-3)
       phaseMap['phase-3']++;
     } else if (resourceId.includes('dl-') || resourceId.includes('neural') || resourceId.includes('deep')) {
+      // Deep Learning (phase-4)
       phaseMap['phase-4']++;
     } else if (resourceId.includes('arch-') || resourceId.includes('transformer') || resourceId.includes('diffusion')) {
+      // Architectures (phase-5)
       phaseMap['phase-5']++;
+    } else if (resourceId.includes('rm-') || resourceId.includes('research')) {
+      // Research Methodology (phase-6)
+      phaseMap['phase-6']++;
     }
   });
 

@@ -33,11 +33,13 @@ interface Props {
 }
 
 const PHASE_TO_SECTION: Record<string, NavSection> = {
+  "phase-0": "programming",
   "phase-1": "math",
   "phase-2": "python",
   "phase-3": "ml",
   "phase-4": "deeplearning",
   "phase-5": "architectures",
+  "phase-6": "research",
 };
 
 function useCountUp(target: number, duration = 1200) {

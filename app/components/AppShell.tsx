@@ -4,11 +4,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppData, NavSection } from '../types';
 import { OverviewPage } from './OverviewPage';
+import { ProgrammingPage } from './ProgrammingPage';
 import { MathPage } from './MathPage';
 import { PythonPage } from './PythonPage';
 import { MLPage } from './MLPage';
 import { DeepLearningPage } from './DeepLearningPage';
 import { ArchitecturesPage } from './ArchitecturesPage';
+import { ResearchPage } from './ResearchPage';
 import { BooksPage } from './BooksPage';
 import { SchedulePage } from './SchedulePage';
 import { LoginPage } from './LoginPage';
@@ -19,11 +21,13 @@ interface Props {
 
 const NAV_ITEMS: { id: NavSection; label: string; phaseId?: string }[] = [
   { id: 'overview', label: 'Overview' },
+  { id: 'programming', label: 'Programming', phaseId: 'phase-0' },
   { id: 'math', label: 'Mathematics', phaseId: 'phase-1' },
   { id: 'python', label: 'Python', phaseId: 'phase-2' },
   { id: 'ml', label: 'ML', phaseId: 'phase-3' },
   { id: 'deeplearning', label: 'Deep Learning', phaseId: 'phase-4' },
   { id: 'architectures', label: 'Architectures', phaseId: 'phase-5' },
+  { id: 'research', label: 'Research', phaseId: 'phase-6' },
   { id: 'books', label: 'Books & Papers' },
   { id: 'schedule', label: 'Schedule' },
 ];
@@ -31,11 +35,13 @@ const NAV_ITEMS: { id: NavSection; label: string; phaseId?: string }[] = [
 // Collect all resource IDs from data
 function getAllResourceIds(data: AppData): string[] {
   const ids: string[] = [];
+  data.programmingFundamentals.topics.forEach(t => t.resources.forEach(r => ids.push(r.id)));
   data.mathematics.topics.forEach(t => t.resources.forEach(r => ids.push(r.id)));
   data.pythonML.topics.forEach(t => t.resources.forEach(r => ids.push(r.id)));
   data.machineLearning.courses.forEach(r => ids.push(r.id));
   data.deepLearning.courses.forEach(r => ids.push(r.id));
   data.architectures.architectureGroups.forEach(g => g.resources.forEach(r => ids.push(r.id)));
+  data.researchMethodology.topics.forEach(t => t.resources.forEach(r => ids.push(r.id)));
   data.freeBooksAndPapers.books.forEach(b => ids.push(b.id));
   data.freeBooksAndPapers.seminalPapers.forEach(p => ids.push(p.id));
   return ids;
@@ -43,11 +49,13 @@ function getAllResourceIds(data: AppData): string[] {
 
 function getResourcesBySection(data: AppData): Record<string, string[]> {
   return {
+    programming: data.programmingFundamentals.topics.flatMap(t => t.resources.map(r => r.id)),
     math: data.mathematics.topics.flatMap(t => t.resources.map(r => r.id)),
     python: data.pythonML.topics.flatMap(t => t.resources.map(r => r.id)),
     ml: data.machineLearning.courses.map(r => r.id),
     deeplearning: data.deepLearning.courses.map(r => r.id),
     architectures: data.architectures.architectureGroups.flatMap(g => g.resources.map(r => r.id)),
+    research: data.researchMethodology.topics.flatMap(t => t.resources.map(r => r.id)),
     books: [...data.freeBooksAndPapers.books.map(b => b.id), ...data.freeBooksAndPapers.seminalPapers.map(p => p.id)],
   };
 }
@@ -164,11 +172,13 @@ export function AppShell({ data }: Props) {
   const phaseProgress = (phaseId: string) => {
     // map phase to section
     const phaseMap: Record<string, string> = {
+      'phase-0': 'programming',
       'phase-1': 'math',
       'phase-2': 'python',
       'phase-3': 'ml',
       'phase-4': 'deeplearning',
       'phase-5': 'architectures',
+      'phase-6': 'research',
     };
     const section = phaseMap[phaseId];
     return section ? sectionProgress(section) : 0;
@@ -256,6 +266,15 @@ export function AppShell({ data }: Props) {
                     setActiveSection={setActiveSection}
                   />
                 )}
+                {activeSection === 'programming' && (
+                  <ProgrammingPage
+                    data={data}
+                    completed={completed}
+                    toggleCompleted={toggleCompleted}
+                    sectionIds={bySection.programming}
+                    resetSection={resetSection}
+                  />
+                )}
                 {activeSection === 'math' && (
                   <MathPage
                     data={data}
@@ -298,6 +317,15 @@ export function AppShell({ data }: Props) {
                     completed={completed}
                     toggleCompleted={toggleCompleted}
                     sectionIds={bySection.architectures}
+                    resetSection={resetSection}
+                  />
+                )}
+                {activeSection === 'research' && (
+                  <ResearchPage
+                    data={data}
+                    completed={completed}
+                    toggleCompleted={toggleCompleted}
+                    sectionIds={bySection.research}
                     resetSection={resetSection}
                   />
                 )}
@@ -738,11 +766,13 @@ interface MobileNavDrawerProps {
 
 function MobileNavDrawer({ activeSection, setActiveSection, sectionProgress, isOpen, onClose }: MobileNavDrawerProps) {
   const navItems = [
+    { id: 'programming' as NavSection, label: 'Programming', icon: '💻', section: 'programming' },
     { id: 'math' as NavSection, label: 'Mathematics', icon: '∑', section: 'math' },
     { id: 'python' as NavSection, label: 'Python', icon: '🐍', section: 'python' },
     { id: 'ml' as NavSection, label: 'Machine Learning', icon: '⚙️', section: 'ml' },
     { id: 'deeplearning' as NavSection, label: 'Deep Learning', icon: '🧠', section: 'deeplearning' },
     { id: 'architectures' as NavSection, label: 'Architectures', icon: '🏗️', section: 'architectures' },
+    { id: 'research' as NavSection, label: 'Research', icon: '📄', section: 'research' },
     { id: 'books' as NavSection, label: 'Books & Papers', icon: '📚', section: 'books' },
   ];
 
