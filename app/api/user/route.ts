@@ -1,14 +1,19 @@
 /**
  * User data CRUD with enhanced progress tracking:
- * GET  /api/user?userId=xxx  → returns user_{userId}.json with detailed progress
+ * GET  /api/user?userId=xxx  → returns user profile with detailed progress
  * POST /api/user             → { userId, data: UserProfile } → saves and updates progress stats
+ * 
+ * Storage priority:
+ * 1. Supabase (production & local if configured)
+ * 2. Filesystem fallback (local development only)
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { getSupabaseClient } from '@/app/lib/supabase';
 
-// Store user files in /data/users/ directory at project root
+// Filesystem fallback for local development
 const DATA_DIR = path.join(process.cwd(), 'data', 'users');
 
 async function ensureDir() {
@@ -20,9 +25,14 @@ async function ensureDir() {
 }
 
 function getUserFilePath(userId: string): string {
-  // Sanitize userId to prevent path traversal
   const safe = userId.replace(/[^a-zA-Z0-9_-]/g, '');
   return path.join(DATA_DIR, `user_${safe}.json`);
+}
+
+// Check if Supabase is configured
+function isSupabaseConfigured(): boolean {
+  return !!(process.env.NEXT_PUBLIC_SUPABASE_URL && 
+    (process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY));
 }
 
 // Default user profile structure
@@ -166,27 +176,32 @@ export async function GET(req: NextRequest) {
   let profile = null;
 
   try {
-    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-      // Use Vercel KV (Redis)
-      const res = await fetch(`${process.env.KV_REST_API_URL}`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}` },
-        body: JSON.stringify(['GET', `user_${safe}`]),
-        cache: 'no-store',
-      });
-      const json = await res.json();
-      if (json.result) {
-        profile = typeof json.result === 'string' ? JSON.parse(json.result) : json.result;
+    if (isSupabaseConfigured()) {
+      // Use Supabase
+      const supabase = getSupabaseClient();
+      const { data, error } = await supabase
+        .from('user_profiles')
+        .select('data')
+        .eq('user_id', safe)
+        .single();
+
+      if (error && error.code !== 'PGRST116') { // PGRST116 = not found
+        console.error('Supabase GET error:', error);
+      }
+      
+      if (data?.data) {
+        profile = data.data;
       }
     } else {
-      // Use local filesystem
+      // Fallback to filesystem
       await ensureDir();
       const filePath = getUserFilePath(userId);
       const raw = await fs.readFile(filePath, 'utf8');
       profile = JSON.parse(raw);
     }
   } catch (err) {
-    // File doesn't exist or error reading
+    // Profile doesn't exist or error reading
+    console.log('No existing profile found for:', userId);
   }
 
   // If profile exists, merge with defaults to ensure all fields are present
@@ -215,25 +230,31 @@ export async function POST(req: NextRequest) {
   // Load existing profile or create default
   let existingProfile = null;
   try {
-    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-      const res = await fetch(`${process.env.KV_REST_API_URL}`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}` },
-        body: JSON.stringify(['GET', `user_${safe}`]),
-        cache: 'no-store',
-      });
-      const json = await res.json();
-      if (json.result) {
-        existingProfile = typeof json.result === 'string' ? JSON.parse(json.result) : json.result;
+    if (isSupabaseConfigured()) {
+      // Use Supabase
+      const supabase = getSupabaseClient();
+      const { data: row, error } = await supabase
+        .from('user_profiles')
+        .select('data')
+        .eq('user_id', safe)
+        .single();
+
+      if (error && error.code !== 'PGRST116') {
+        console.error('Supabase GET error:', error);
+      }
+      
+      if (row?.data) {
+        existingProfile = row.data;
       }
     } else {
+      // Fallback to filesystem
       await ensureDir();
       const filePath = getUserFilePath(userId);
       const raw = await fs.readFile(filePath, 'utf8');
       existingProfile = JSON.parse(raw);
     }
   } catch (err) {
-    // File doesn't exist, will create new
+    // Profile doesn't exist, will create new
   }
 
   const defaultProfile = createDefaultProfile(userId);
@@ -276,15 +297,25 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-      // Use Vercel KV (Redis)
-      await fetch(`${process.env.KV_REST_API_URL}`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${process.env.KV_REST_API_TOKEN}` },
-        body: JSON.stringify(['SET', `user_${safe}`, JSON.stringify(updatedProfile)]),
-      });
+    if (isSupabaseConfigured()) {
+      // Use Supabase (upsert)
+      const supabase = getSupabaseClient();
+      const { error } = await supabase
+        .from('user_profiles')
+        .upsert({
+          user_id: safe,
+          data: updatedProfile,
+          updated_at: new Date().toISOString(),
+        }, {
+          onConflict: 'user_id'
+        });
+
+      if (error) {
+        console.error('Supabase upsert error:', error);
+        return NextResponse.json({ error: 'Failed to save data to Supabase' }, { status: 500 });
+      }
     } else {
-      // Use local filesystem
+      // Fallback to filesystem
       await ensureDir();
       const filePath = getUserFilePath(userId);
       await fs.writeFile(filePath, JSON.stringify(updatedProfile, null, 2), 'utf8');

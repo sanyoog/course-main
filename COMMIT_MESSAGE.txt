@@ -1,0 +1,53 @@
+Add Supabase integration for persistent user data storage
+
+Major Changes:
+- Migrated from filesystem/Redis to Supabase PostgreSQL database
+- Added support for Phase 0 (Programming) and Phase 6 (Research) with actual data
+- Updated user API routes to use Supabase with filesystem fallback
+- Created comprehensive setup and deployment documentation
+
+Technical Details:
+- Installed @supabase/supabase-js package
+- Created Supabase client utility (app/lib/supabase.ts)
+- Updated app/api/user/route.ts with Supabase integration
+- Updated user data structure to support all 7 phases (phase-0 through phase-6)
+- Enhanced resource-to-phase mapping for accurate progress tracking
+
+New Features:
+- ProgrammingPage.tsx now renders actual resources from data.json
+- ResearchPage.tsx now renders actual resources from data.json
+- All 7 phases fully integrated with progress tracking
+- Phase progress automatically calculated and updated
+
+Documentation:
+- SUPABASE_QUICK_START.md - 5-minute setup guide
+- SUPABASE_SETUP.md - Detailed setup with troubleshooting
+- supabase-schema.sql - Ready-to-run database schema
+- DEPLOYMENT_CHECKLIST.md - Pre-deployment verification
+- START_HERE.md - Quick overview and next steps
+- README_DEPLOYMENT.md - Complete project documentation
+
+Database:
+- Created user_profiles table schema with JSONB for flexible data storage
+- Automatic timestamp management with triggers
+- Row Level Security policies configured
+- Indexes for optimal query performance
+
+Benefits:
+- ✅ Works on Vercel free tier (no paid services required)
+- ✅ Persistent data storage across deployments
+- ✅ PostgreSQL reliability and scalability
+- ✅ SQL access for debugging and analytics
+- ✅ Automatic backups included
+- ✅ Real-time capabilities available
+
+Testing:
+- Build verified: TypeScript compilation successful
+- All routes functional
+- Local development tested with filesystem fallback
+- Ready for production deployment
+
+Next Steps:
+1. Follow SUPABASE_QUICK_START.md to set up Supabase
+2. Add environment variables to Vercel
+3. Deploy to production
